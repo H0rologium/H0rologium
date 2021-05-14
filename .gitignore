@@ -2,3 +2,8 @@
 
 Some XML Testing/bin/
 Some XML Testing/obj/
+
+#Ignores for 'useful methods'
+
+HorosUsefulMethods/bin/
+HorosUsefulMethods/obj/
