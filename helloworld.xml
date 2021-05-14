@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test>
+	<head>Hello Head</head>
+	<body>Hello Body</body>
+	<category>
+		<title>Hello world</title>
+		<desc>description</desc>
+		<id>9</id>	
+	</category>
+</test>
