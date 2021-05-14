@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Some XML Testing/1.0.0": {
+      "HorosUsefulMethods/1.0.0": {
         "runtime": {
-          "Some XML Testing.dll": {}
+          "HorosUsefulMethods.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Some XML Testing/1.0.0": {
+    "HorosUsefulMethods/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
