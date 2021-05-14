@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Linq;
+using System.Collections;
 
 namespace Some_XML_Testing
 {
@@ -17,21 +18,29 @@ namespace Some_XML_Testing
             foreach (XElement q in xml.Root.Elements())
             {
                 //Will print out each single tag element. For categorial elements (that have descendents) their values will all be bunched together
-                if (q.HasElements && !q.HasAttributes)
+                if (q.HasElements)
                 {
-                    foreach (XElement e in q.Elements())
+                    foreach (XElement z in q.Elements())
                     {
-                        Console.WriteLine($"{e.Value.ToString()} child of {e.Parent}");
-                    }    
-                    //Attributes are the actual values, elements are children tags
-                } else if (q.HasAttributes && !q.HasElements && !q.Parent.)
-                {
-                    Console.WriteLine(q.Value.ToString());
+                        Console.WriteLine($"{z.Value} \n which is a child of {z.Parent.Name}\n");
+                    }
+
+                } else {
+                    Console.WriteLine(q.Value);
                     i += 1;
                 }
                 
             }
             
         }
+
+
+        //Helps us grab an inclusive substring between two indexes provided as strings of desired locations at method call
+        public static string TextBetween(string text, string startS, string endS, int padding = 0)
+        {
+            if (text.IndexOf(startS) < text.IndexOf(endS, padding)) { return text[(text.IndexOf(startS) + 1)..text.IndexOf(endS)]; }
+            else return "ERROR! ENDING INDEX INVALID (<= STARTINDEX)";
+        }
+
     }
 }

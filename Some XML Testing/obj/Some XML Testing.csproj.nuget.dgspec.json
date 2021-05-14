@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emurphy\\git\\Some XML Testing\\Some XML Testing.csproj": {}
+    "C:\\Users\\emurphy\\git\\H0rologium\\Some XML Testing\\Some XML Testing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emurphy\\git\\Some XML Testing\\Some XML Testing.csproj": {
+    "C:\\Users\\emurphy\\git\\H0rologium\\Some XML Testing\\Some XML Testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emurphy\\git\\Some XML Testing\\Some XML Testing.csproj",
+        "projectUniqueName": "C:\\Users\\emurphy\\git\\H0rologium\\Some XML Testing\\Some XML Testing.csproj",
         "projectName": "Some XML Testing",
-        "projectPath": "C:\\Users\\emurphy\\git\\Some XML Testing\\Some XML Testing.csproj",
+        "projectPath": "C:\\Users\\emurphy\\git\\H0rologium\\Some XML Testing\\Some XML Testing.csproj",
         "packagesPath": "C:\\Users\\emurphy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emurphy\\git\\Some XML Testing\\obj\\",
+        "outputPath": "C:\\Users\\emurphy\\git\\H0rologium\\Some XML Testing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
