@@ -1,0 +1,285 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.8f1 (507919d4fff5) revision 5273881'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 19042.985; Version 2009; 64bit' Language: 'en' Physical Memory: 7973 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/emurphy/git/StardustDueler/StardustDueler
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+55818
+Successfully changed project path to: C:/Users/emurphy/git/StardustDueler/StardustDueler
+C:/Users/emurphy/git/StardustDueler/StardustDueler
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 24.05 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.8f1 (507919d4fff5)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/emurphy/git/StardustDueler/StardustDueler/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 630 (ID=0x3e92)
+    Vendor:   
+    VRAM:     3986 MB
+    Driver:   27.20.100.8935
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Registered in 0.009161 seconds.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 21.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.473 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003886 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.958 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1115 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.1 MB.
+System memory in use after: 57.2 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 1558.
+Total: 1.710900 ms (FindLiveObjects: 0.130600 ms CreateObjectMapping: 0.034900 ms MarkObjects: 1.471200 ms  DeleteObjects: 0.073500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Textures
+  artifactKey: Guid(59b73c0644ebc944fb521f2fc25c89e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures using Guid(59b73c0644ebc944fb521f2fc25c89e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ccda6de89a76ad4792d5cbb25d3b3dd') in 0.015276 seconds
+  Import took 0.017475 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Textures/bg_menu.png
+  artifactKey: Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/bg_menu.png using Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54d5ee514e2d309852586f2025096d2') in 0.154933 seconds
+  Import took 0.157089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.016829 seconds.
+  path: Assets/Textures/bg_menu.png
+  artifactKey: Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/bg_menu.png using Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41880d83155f1d044e299940d1814ee2') in 0.117449 seconds
+  Import took 0.124572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 197.773832 seconds.
+  path: Assets/Textures/bg_menu.png
+  artifactKey: Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/bg_menu.png using Guid(18e8d1627c0301040a9037e3c7f8c7b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf3f95d7cf1a1152a5789c34750250e') in 0.112495 seconds
+  Import took 0.114962 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001991 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.012 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.20 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1157 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 63.1 MB.
+System memory in use after: 62.5 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1602.
+Total: 1.783000 ms (FindLiveObjects: 0.135200 ms CreateObjectMapping: 0.036500 ms MarkObjects: 1.334000 ms  DeleteObjects: 0.276500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 272.362660 seconds.
+  path: Assets/Font
+  artifactKey: Guid(b51343df072505543a135c72d770e263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font using Guid(b51343df072505543a135c72d770e263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '886e77cca88d8e4fc0e92164d89402d0') in 0.020998 seconds
+  Import took 0.022868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.068255 seconds.
+  path: Assets/Font/Montserrat-Black.ttf
+  artifactKey: Guid(6e80760d8d5cbbc448becb1ab6c823c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Black.ttf using Guid(6e80760d8d5cbbc448becb1ab6c823c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c4eebf6440ad1a0b4d35bae46958ca7') in 0.116007 seconds
+  Import took 0.118021 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Font/Montserrat-ExtraLightItalic.ttf
+  artifactKey: Guid(8235667b6f009c849bdc3cf05e392975) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-ExtraLightItalic.ttf using Guid(8235667b6f009c849bdc3cf05e392975) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2ec2ab3b7a5f9fb459089558781c204') in 0.039412 seconds
+  Import took 0.041222 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Font/Montserrat-Medium.ttf
+  artifactKey: Guid(dc8dcc9cf22602e4b8dfbba3bccbf081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Medium.ttf using Guid(dc8dcc9cf22602e4b8dfbba3bccbf081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '981f2c7ae29e3ff1e95bca0074c9abbc') in 0.036263 seconds
+  Import took 0.038006 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Font/Montserrat-LightItalic.ttf
+  artifactKey: Guid(ee9cea45f6aeaae448200129dbc69211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-LightItalic.ttf using Guid(ee9cea45f6aeaae448200129dbc69211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d8369ba0da30c32bea757d24a0a6494') in 0.037495 seconds
+  Import took 0.039320 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/Font/Montserrat-Light.ttf
+  artifactKey: Guid(e24f4a8a5577d88448f070c556845b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Light.ttf using Guid(e24f4a8a5577d88448f070c556845b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adad35862b6b62e83e20298f6980b2c6') in 0.037048 seconds
+  Import took 0.039813 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Font/Montserrat-Thin.ttf
+  artifactKey: Guid(c2da5bf7ef966fa439701b526936c970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Thin.ttf using Guid(c2da5bf7ef966fa439701b526936c970) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '173a1b2498305c77536d7647c8f62f50') in 0.033057 seconds
+  Import took 0.034871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Font/Montserrat-Regular.ttf
+  artifactKey: Guid(015867ef84f34a84f8dd21ae1b18d143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Regular.ttf using Guid(015867ef84f34a84f8dd21ae1b18d143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fefac09ab881ba864283513262a4845') in 0.034078 seconds
+  Import took 0.035809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Font/Montserrat-ThinItalic.ttf
+  artifactKey: Guid(2a531854138a7df4c9da5e4726f234cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-ThinItalic.ttf using Guid(2a531854138a7df4c9da5e4726f234cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b2dc5130a291ad7fa9434fc4b1bc8b') in 0.035589 seconds
+  Import took 0.037622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/Font/Montserrat-BlackItalic.ttf
+  artifactKey: Guid(2bb585aa2590b08409623b09c0bc5f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-BlackItalic.ttf using Guid(2bb585aa2590b08409623b09c0bc5f2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b1c2a4e373bdd4394a8a05fee50f5ae') in 0.036821 seconds
+  Import took 0.038753 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Font/Montserrat-ExtraLight.ttf
+  artifactKey: Guid(12a7864ced9886c45a452841560d31fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-ExtraLight.ttf using Guid(12a7864ced9886c45a452841560d31fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '302b5955e19fb861d89c0f5ed02f19ae') in 0.031572 seconds
+  Import took 0.033319 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/Font/Montserrat-ExtraBoldItalic.ttf
+  artifactKey: Guid(7d992a1bf2c0f944899f5dfc5ded866e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-ExtraBoldItalic.ttf using Guid(7d992a1bf2c0f944899f5dfc5ded866e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffea638afb0ec4d1e640215fd398b767') in 0.032610 seconds
+  Import took 0.034901 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Font/Montserrat-SemiBold.ttf
+  artifactKey: Guid(5f3d2c88f52bc074d95601e85f0f1bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-SemiBold.ttf using Guid(5f3d2c88f52bc074d95601e85f0f1bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e50b482b2590a7ef9b599fa0588eb0') in 0.038285 seconds
+  Import took 0.040752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Font/Montserrat-Italic.ttf
+  artifactKey: Guid(a79b022cea17fcd45ab993e0f89fd679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Italic.ttf using Guid(a79b022cea17fcd45ab993e0f89fd679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38c17b595005a174588a6fddc20454c9') in 0.032408 seconds
+  Import took 0.037457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Font/Montserrat-MediumItalic.ttf
+  artifactKey: Guid(295df63fcc5876c47b016e04b8dd7821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-MediumItalic.ttf using Guid(295df63fcc5876c47b016e04b8dd7821) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be2fd09b5a3308ead16c921df5a9b378') in 0.037133 seconds
+  Import took 0.039198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Font/Montserrat-SemiBoldItalic.ttf
+  artifactKey: Guid(205b2b700f55e284fb2d38e668dea79e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-SemiBoldItalic.ttf using Guid(205b2b700f55e284fb2d38e668dea79e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a8c24e1b74db2433b0657277091c06') in 0.038209 seconds
+  Import took 0.040347 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Font/Montserrat-BoldItalic.ttf
+  artifactKey: Guid(c2f30716223afec45a024550c85a272e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-BoldItalic.ttf using Guid(c2f30716223afec45a024550c85a272e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb79b1b6e88acd8670ec57e0b200bdf') in 0.040057 seconds
+  Import took 0.042952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Font/Montserrat-ExtraBold.ttf
+  artifactKey: Guid(8a1879ed5df82bf429f9f172db2a78ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-ExtraBold.ttf using Guid(8a1879ed5df82bf429f9f172db2a78ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4c28e115a9f57b07c91336a8427d10e') in 0.032649 seconds
+  Import took 0.034614 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Font/Montserrat-Bold.ttf
+  artifactKey: Guid(20a984858aa880c49925ce3cc2959432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Font/Montserrat-Bold.ttf using Guid(20a984858aa880c49925ce3cc2959432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e39fbbef99b02f09bb48bb9ccac898a') in 0.035438 seconds
+  Import took 0.037561 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
