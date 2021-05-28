@@ -11,3 +11,8 @@ HorosUsefulMethods/HorosUsefulMethods/net5.0/HorosUsefulMethods.deps.json
 HorosUsefulMethods/HorosUsefulMethods/net5.0/HorosUsefulMethods.pdb
 HorosUsefulMethods/HorosUsefulMethods/net5.0/ref/
 
+#ignores for 'remote' bot
+
+RemoteHostManager/bin/
+RemoteHostManager/obj/
+RemoteHostManager/RemoteHostManager/
