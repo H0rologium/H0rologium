@@ -1,0 +1,10 @@
+matplotlib.pyplot
+pytesseract
+tesseract (installer in folder)
+numpy
+opencv-python
+mouse
+keyboard
+pyautogui
+time
+os

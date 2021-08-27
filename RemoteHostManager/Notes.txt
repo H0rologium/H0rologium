@@ -1,1 +1,0 @@
-the bot_token.txt needs to be placed directly under C:\\

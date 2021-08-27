@@ -1,0 +1,27 @@
+
+Electrical: Divert Power to Shields (0/2)
+Admin: Swipe Card
+Cafeteria: Empty Garbage (0/2)
+Reactor: Clean Vent
+Electrical: Divert Power to Communications (0/2)
+
+
+
+Download / Upload (8 seconds) ---
+
+Communications: Download Data (0/2)
+Navigation: Download Data (0/2)
+Electrical: Download Data (0/2)
+Cafeteria: Download Data (0/2)
+
+
+
+Fuel (4 seconds to fill) ---
+
+Storage: Fuel Engines (0/2) 
+
+
+
+Wiring / Electrical ---
+
+Storage: Fix Wiring (0/3)
