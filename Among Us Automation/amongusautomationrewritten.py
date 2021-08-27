@@ -48,12 +48,13 @@ bqaoyu###########g&&qamc.............--=apb&gg####pwoeab
 dbpaeo###########g&dqpa?..............--cpb&gg####&apbbd
 $&&dqd#####@#####g$dbqp;..............--;bb&gg####gbdd$$
 """
-def doJob(name, centercoords):
+def doJob(name, centercoords, rootdir):
     #initialize job-specific variables
     #centercoords is the x,y coordinates returned from determineTaskList's pyscreeze function
     gascanfillemptybuttoncoords = (1500, 1005)#Could use pagui.locateCenter but right now we're fine with coords (faster)
     #strip filename to match method
     shorthand = name.removesuffix('.png')
+    #Determine and run job
     if shorthand == 'gascan' or shorthand == 'refuel':
         #Pathing is simple, gascan is always in the storage room and the engines never move
         #Only thing would be 'guessing' which engine first. Possibly get angle of yellow arrow?
@@ -63,7 +64,127 @@ def doJob(name, centercoords):
         time.sleep(4)
         m.release()
         k.send('escape')
-        #path to second can location 
+        time.sleep(1.1)
+        return
+    if shorthand == 'downloadbtn' or shorthand == 'uploadbtn':
+        #Simply clicking the button then waiting 8 seconds.
+        print('Committing to upload / download task!')
+        m.move(centercoords[0]. centercoords[1])
+        m.click()
+        time.sleep(8)
+        k.send('escape')
+        time.sleep(1.1)
+        return
+    if shorthand == '1to10':
+        #Finding 1 through ten and clicking them in order
+        #We need to get the mouse out of the way to make sure that its not highlighting anything
+        print('Committing to the sequence task')
+        m.move(centercoords[0],centercoords[1])#The image we have for this task will center the mouse on the top bar, away from the buttons
+        sequence = []#sigma male
+        for i in range(10):
+            #Identify the current number location then save the coordinates
+            val = ps5.locateCenterOnScreen(rootdir + name)
+            if not val == None:
+                print('Found element ' + i + ' at location ' + val + '.')
+                #The array is already ordered, no sorting needs to be done. This is essentially guaranteed unless filenames get changed in \traininig\
+                sequence.append((i,val))
+        for button in sequence:#This array/loop structure is moreso here to animate the mouse on this task and make it look cooler
+            #You could easily just move and click inside of the original loop if you don't want to be fancy.
+            #Button is a tuple of (i, (x,y))
+            m.move(button[1][0],button[1][1],True,0.3)
+            m.click()
+        time.sleep(1.4)
+        k.send('escape')
+        return
+    if shorthand == 'adminswipecard':
+        #Swiping the card in admin is actually pretty easy
+        print('Committing to swiping the card in admin')
+        print('TODO: Add card swipe functionality')
+        
+        time.sleep(1.1)
+        k.send('escape')
+        return
+    if shorthand == 'centercrosshairs':
+        #Moving the crosshairs into the center of the screen
+        print('Committing to moving the crosshairs to the middle!')
+        print('TODO: Add crosshairmove functionality')
+        #m.move(centercoords[0],centercoords[1],True,0.4)
+        #m.drag(centercoords[0].centercoords[1],DESTINATIONCOORDS[0],DESTINATIONCOORDS[1],True,0.6)
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'crosshairs':
+        #My nemesis, those dang assteroids
+        print('Committing to shooting asteroids')
+        print('TODO: Add asteroid shooting task')
+        #Detect motion is probably the best method for this
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'electricalslidingbars':
+        #Slide the red-highlighted slider vertically up
+        print('Committing to the red slider task')
+        print('TODO: Add redslider functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'enginealignment':
+        #Aligning the engine outline to match the middle line
+        #Could check to see when green, green only appears near the middle when lined up.
+        print('Comitting to enginealignment')
+        print('TODO: Add enginealignment functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'fusebox':
+        #Clicking the middle fuse, wayyyy to complex :)
+        m.move(centercoords[0],centercoords[1],True,0.3)
+        time.sleep(0.4)
+        m.click()
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'leafvent':
+        #Move the leaves into the trash vent
+        print('Comitting to leaf vent task')
+        print('TODO: Add leaf vent functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'leverjob':
+        #Pull the lever kronk!
+        print('Comitting to leaf vent task')
+        print('TODO: Add leverjob functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'navshipup':
+        #Drag the navigation ship up
+        print('Comitting to leaf vent task')
+        print('TODO: Add leaf vent functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    elif shorthand == 'navshipdown':
+        #Drag the navigation ship down
+        print('Comitting to leaf vent task')
+        print('TODO: Add leaf vent functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
+        return
+    if shorthand == 'patternmatcher':
+        #Matching blue patterns
+        print('Comitting to leaf vent task')
+        print('TODO: Add leaf vent functionality')
+        
+        time.sleep(1.5)
+        k.send('escape')
     return
 
 def determineTaskList(frame):
@@ -80,7 +201,7 @@ def determineTaskList(frame):
         #Friendship ended with pyscreez, now pyautogui is best friend
         if not val == None:
             print('Found job for' + file)
-            doJob(file, val)
+            doJob(file, val, rootdir)
             return
         else:
             continue
