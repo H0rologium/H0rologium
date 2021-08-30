@@ -63,6 +63,8 @@ def doJob(name, centercoords, mapdir):
     ELECTRICAL_RED_PULLSWITCH_COLOR = (255, 98, 0)
     #Left to right
     ELECTRICAL_RED_PULLSWITCH_LOCATIONS = [(583, 870),(688, 872),(798, 872),(905, 870),(1011, 874),(1118, 875),(1224, 875),(1335, 874)]
+
+
     #strip filename to match method
     shorthand = name.removesuffix('.png')
     #Determine and run job
