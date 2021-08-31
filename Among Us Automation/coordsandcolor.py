@@ -4,7 +4,7 @@ import pyautogui as pagui
 import keyboard as k
 def main():
     while True:
-        if m.is_pressed("right"):
+        if k.is_pressed('g'):
             print("Mouse Pressed")
             coords = m.get_position()
             print('Coordinates: ' + str(coords))

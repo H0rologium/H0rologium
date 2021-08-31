@@ -9,6 +9,7 @@ import os
 from PIL import Image
 from PIL import ImageGrab
 import pyscreeze as ps5
+import imutils
 roundOver = False
 mongus = "1MP0$T3R" #window title
 majorIncidentPubba = 'skeld' #why
@@ -61,6 +62,9 @@ def doJob(name, centercoords, mapdir):
     asteroidscreenupcheckcoords = (546, 1001)#Makes sure the asteroid task window is still open
     ASTEROIDS_REGION = (501, 200, 890, 889)#Bounding region for asteroid window, x,y,width,height
     ELECTRICAL_RED_PULLSWITCH_COLOR = (255, 98, 0)
+    ENGINEALIGNMENT_CENTER = (1300, 592)
+    ENGINEALIGNMENT_LOCATIONS = [(1371,212),(1329,328),(1297,448),(1284,575),(1285,692),(1295,794),(1328,906),(1353,995),(1376,1062),(1312, 864)]
+    ENGINEALIGNMENT_COLOR = (66,65,66)
     #Left to right
     ELECTRICAL_RED_PULLSWITCH_LOCATIONS = [(583, 870),(688, 872),(798, 872),(905, 870),(1011, 874),(1118, 875),(1224, 875),(1335, 874)]
 
@@ -174,7 +178,6 @@ def doJob(name, centercoords, mapdir):
                 m.move(0,-600,False,0.2)
                 m.release()
                 break
-        
         k.send('escape')
         time.sleep(1.7)
         return
@@ -182,8 +185,13 @@ def doJob(name, centercoords, mapdir):
         #Aligning the engine outline to match the middle line
         #Could check to see when green, green only appears near the middle when lined up.
         print('Comitting to enginealignment')
-        print('TODO: Add enginealignment functionality')
-        
+        for location in ENGINEALIGNMENT_LOCATIONS:
+            m.move(location[0], location[1])
+            pix = ImageGrab.grab().load()[location[0], location[1]]
+            if not pix[0] == ENGINEALIGNMENT_COLOR[0] and pix[1] == ENGINEALIGNMENT_COLOR[1]:
+                m.press()
+                m.move(ENGINEALIGNMENT_CENTER[0],ENGINEALIGNMENT_CENTER[1],True,0.8)
+                m.release()
         k.send('escape')
         time.sleep(1.7)
         return
@@ -198,8 +206,16 @@ def doJob(name, centercoords, mapdir):
     if shorthand == 'leafvent':
         #Move the leaves into the trash vent
         print('Comitting to leaf vent task')
-        print('TODO: Add leaf vent functionality')
+        #Surprisingly one of the most complex tasks ever
         
+        #m.move(693, 137, 0.6)
+        #for y in range(0, 10):
+        #   m.move(0, 60, False, 0.1)
+        #    for x in range(0, 10):
+        #        m.move(50, 0, False, 0.1)
+        #        pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
+        #    m.move(-500, 0, False, 0.1)    
+            
         k.send('escape')
         time.sleep(1.7)
         return
