@@ -67,8 +67,10 @@ def doJob(name, centercoords, mapdir):
     ENGINEALIGNMENT_COLOR = (66,65,66)
     #Left to right
     ELECTRICAL_RED_PULLSWITCH_LOCATIONS = [(583, 870),(688, 872),(798, 872),(905, 870),(1011, 874),(1118, 875),(1224, 875),(1335, 874)]
+    LEAFBLOWERSTARTPOS = (693, 137)
+    LEAFVENTCENTER = (483, 561)
 
-
+    
     #strip filename to match method
     shorthand = name.removesuffix('.png')
     #Determine and run job
@@ -207,23 +209,29 @@ def doJob(name, centercoords, mapdir):
         #Move the leaves into the trash vent
         print('Comitting to leaf vent task')
         #Surprisingly one of the most complex tasks ever
-        
-        #m.move(693, 137, 0.6)
-        #for y in range(0, 10):
-        #   m.move(0, 60, False, 0.1)
-        #    for x in range(0, 10):
-        #        m.move(50, 0, False, 0.1)
-        #        pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
-        #    m.move(-500, 0, False, 0.1)    
-            
+        m.move(LEAFBLOWERSTARTPOS[0],LEAFBLOWERSTARTPOS[1], 0.6)
+        for y in range(0, 10):
+           m.move(0, 60, False, 0.1)
+            for x in range(0, 10):
+                m.move(50, 0, False, 0.1)
+                pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
+                if pix[2] < 100:#Only the leaves have a blue value less than 100
+                    print('Found a leaf! with ' + pix[0] + ', ' + pix[1] + ', ' + pix[2] + '.')
+                    x , y = m.get_position()
+                    m.drag(x, y, LEAFVENTCENTER[0], LEAFVENTCENTER[1])
+                    m.move(x, y, 0.2)
+            m.move(-500, 0, False, 0.1)    
         k.send('escape')
         time.sleep(1.7)
         return
     if shorthand == 'leverjob':
         #Pull the lever kronk!
-        print('Comitting to leaf vent task')
-        print('TODO: Add leverjob functionality')
-        
+        print('Comitting to lever pulling task')
+        m.move()
+        m.press()
+        m.move(0, 1000, False, 0.4)#Animating here is necessary or the game wont register the lever moving
+        time.sleep(2.5)#Have to hold the lever for this timee
+        m.release()
         k.send('escape')
         time.sleep(1.7)
         return
@@ -245,8 +253,8 @@ def doJob(name, centercoords, mapdir):
         return
     if shorthand == 'patternmatcher':
         #Matching blue patterns
-        print('Comitting to leaf vent task')
-        print('TODO: Add leaf vent functionality')
+        print('Comitting to pattern matching task')
+        #Possibly record each step as an image and use that to click?
         
         k.send('escape')
         time.sleep(1.7)

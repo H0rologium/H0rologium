@@ -8,8 +8,8 @@ def main():
             print("Mouse Pressed")
             coords = m.get_position()
             print('Coordinates: ' + str(coords))
-            pix = pagui.pixel(coords[0],coords[1])
-            print('\nColor: ' +  str(pix))
+            #pix = pagui.pixel(coords[0],coords[1])
+            #print('\nColor: ' +  str(pix))
             time.sleep(0.20)
         if k.is_pressed("q"):
             break
