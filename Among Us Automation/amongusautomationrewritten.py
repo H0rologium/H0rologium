@@ -55,6 +55,7 @@ $&&dqd#####@#####g$dbqp;..............--;bb&gg####gbdd$$
 """
 def doJob(name, centercoords, mapdir):
     rootdir = os.path.join(os.getcwd() + images + '\\' + majorIncidentPubba + 'jobs\\')
+    #---------------------------------------------------------------------
     #initialize job-specific variables
     #note that these coordinates are based on running the game at 1920 x 1200 resolution.
     #centercoords is the x,y coordinates returned from determineTaskList's pyscreeze function
@@ -69,7 +70,11 @@ def doJob(name, centercoords, mapdir):
     ELECTRICAL_RED_PULLSWITCH_LOCATIONS = [(583, 870),(688, 872),(798, 872),(905, 870),(1011, 874),(1118, 875),(1224, 875),(1335, 874)]
     LEAFBLOWERSTARTPOS = (693, 137)
     LEAFVENTCENTER = (483, 561)
-
+    LEVERLOCATION = (1302, 467)
+    NAVSHIPSTART = (588, 302)#Upper left corner of the navship screen
+    GRIDTOWATCH = []#For matching the blue squares, the location where each 
+    BUTTONGRID = []
+    #--------------------------------------------------------------------
     
     #strip filename to match method
     shorthand = name.removesuffix('.png')
@@ -227,7 +232,7 @@ def doJob(name, centercoords, mapdir):
     if shorthand == 'leverjob':
         #Pull the lever kronk!
         print('Comitting to lever pulling task')
-        m.move()
+        m.move(LEVERLOCATION[0], LEVERLOCATION[1])
         m.press()
         m.move(0, 1000, False, 0.4)#Animating here is necessary or the game wont register the lever moving
         time.sleep(2.5)#Have to hold the lever for this timee
@@ -235,19 +240,33 @@ def doJob(name, centercoords, mapdir):
         k.send('escape')
         time.sleep(1.7)
         return
-    if shorthand == 'navshipup':
+    if shorthand == 'navshipup' or shorthand == 'navshipdown':
         #Drag the navigation ship up
-        print('Comitting to leaf vent task')
-        print('TODO: Add leaf vent functionality')
-        
-        k.send('escape')
-        time.sleep(1.7)
-        return
-    elif shorthand == 'navshipdown':
-        #Drag the navigation ship down
-        print('Comitting to leaf vent task')
-        print('TODO: Add leaf vent functionality')
-        
+        print('Comitting to navship task')
+        #Find the locations
+        POINTS = []
+        m.move(NAVSHIPSTART[0], NAVSHIPSTART[1], 0.3)
+        x = NAVSHIPSTART[0]
+        y = NAVSHIPSTART[1]
+        while y < 890:
+            while x < 1475:
+                m.move(10, 0, False)
+                x = m.get_position()[0]
+                pix = ImageGrab.grab().load()[x, y]
+                if pix[0] < 50:
+                   POINTS.append((x,y)) 
+            m.move(0, 10, False)
+            y = m.get_position()[1]
+            pix = ImageGrab.grab().load()[x, y]
+            if pix[0] < 50:
+                POINTS.append((x,y)) 
+        #Move the ship through
+        m.move(centercoords[0], centercoords[1], 0.2)#To where the ship was originally found
+        x, y = m.get_position()
+        for location in POINTS:
+            m.drag(x, y, location[0], location[1],0.3)
+            x, y = m.get_position()
+            time.sleep(0.1)
         k.send('escape')
         time.sleep(1.7)
         return
@@ -292,7 +311,7 @@ def determineTaskList(frame):
     return
 
 def crewloop():
-    m.move(taskcoords[0][0], taskcoords[0][1], True, 0.1)
+    m.move(taskcoords[0][0], taskcoords[0][1], True, 0.1)#Compacts the task list
     m.click()
     time.sleep(0.5)
     while roundOver == False:
