@@ -74,6 +74,15 @@ def doJob(name, centercoords, mapdir):
     NAVSHIPSTART = (588, 302)#Upper left corner of the navship screen
     GRIDTOWATCH = []#For matching the blue squares, the location where each 
     BUTTONGRID = []
+    COLOREDWIRES = [(38,38,255), (255,0,0), (255,0,255), (255,235,4)]#Blue, Red, Pink and Yellow resp.
+    WIRELCOORDS = [(518, 302), (522, 509), (522,716), (523,925)]#Top to bottom left destinations.
+    WIRERCOORDS = [(1358,298), (1359, 508), (1358 ,720), (1350, 926)]#Top to bottom right destinations
+    SHIELDEDGES = [(696,612), (1205,334),(961,193),(702,327),(953,475),(961,469),(1201,617), (953,758), (719,331), (703,613)]
+    SPINWHEELPAIRS = [((1265, 251),(0,0,0),(1266,344)),((1265,556),(0,0,0),(1252,645)),((1262, 850),(0,0,0),(1257,927))]
+    #^ For the electrical spinning wheels. The middle entry is to detect when the button should be clicked (the bar only lights up at the right time)
+    locs = [(705, 937), (837, 947), (962, 936), (1087, 940), (1210, 939)]#Both locs and testLoc are for test tubes
+    testLoc = [(704, 650), (832, 647), (961, 648), (1091, 649), (1210, 650)]
+    TESTTUBEORIGIN = (1290,1036)#The square button to press 
     #--------------------------------------------------------------------
     
     #strip filename to match method
@@ -302,15 +311,104 @@ def doJob(name, centercoords, mapdir):
         k.send('escape')
         time.sleep(1.7)
         return
+    
+    if shorthand == 'wires':
+        colorOrder = []
+        #Criss crossing the wires
+        for cable in WIRELCOORDS:
+            m.move(cable[0],cable[1],True,0.4)
+            pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
+            for color in COLOREDWIRES:
+                if pix == color:
+                    colorOrder.append((pix ,(m.get_position()[0], m.get_position()[1])))
+        print('Color order: ' + str(colorOrder))
+        #Now we have the colors in order, we need to match them up!
+        #colorOrder values: two tuples: ((color-of-pixel),(coordinateX,coordinateY))
+        for leftcable in colorOrder:
+            for cables in WIRERCOORDS:
+                m.move(cables[0],cables[1],True,0.4)
+                pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
+                if leftcable[0] == pix:#These lines need to connect
+                    m.move(leftcable[1][0],leftcable[1][1])
+                    m.press()
+                    m.move(cables[0],cables[1],True,0.4)
+                    m.release()
+        #The task loops one additional time so theres no need to exit or wait
+        return
+    if shorthand == 'spinnywheels':
+        #Clicking the button at the right time
+        print('Comitting to the spinny wheel task')
+        for paris in SPINWHEELPAIRS:
+            m.move(paris[0][0],paris[0][1], True, 0.4)
+            while True:
+                value = ImageGrab.grab().load()[paris[0][0],paris[0][1]]
+                if value != paris[1]:
+                    m.move(paris[2][0],paris[2][1])
+                    m.click()
+                    break
+        time.sleep(1.7)
+        k.send('escape')
+        return
+    if shorthand == 'testtubes':
+        #Testing the tubes
+        print("Starting test tube scanner")
+        m.move(TESTTUBEORIGIN[0], TESTTUBEORIGIN[1],True,0.1)
+        m.click("left")
+        time.sleep(62.5)
+        for i in range(4):
+            x,y = testLoc[i]
+            m.move(x,y,True,0.3)
+            color = ImageGrab.grab().load()[x,y]
+            if ImageGrab.grab().load()[x,y] == (246,134,134):
+                x,y = locs[i]
+                m.move(x,y,True,0.4)
+                m.click("left")
+                break
+        time.sleep(1.6)
+        print("Scan complete")
+        return
+    if shorthand == 'scanner':
+        #Waiting for scanner
+        print('Comitting to waiting for the scanner to finish \'task\'')
+        time.sleep(11.5)
+        return
     if shorthand == 'patternmatcher':
         #Matching blue patterns
         print('Comitting to pattern matching task')
         #Possibly record each step as an image and use that to click?
-        
+
+            
         k.send('escape')
         time.sleep(1.7)
-    return
+        return
+    if shorthand == 'cleanvent':
+        #Cleaning out the sussy vent
+        print('Committing to cleaning out the vent')
 
+
+
+        time.sleep(1.7)
+        return
+    if shorthand == 'shields':
+        #Clicking the shield tiles
+        print('Comitting to shield task')
+        #im still LAUGHING at some of the old methods i tried in the past, including a randomized clicker
+        #Some of these index values correspond to the center of the circles. only God knows which..
+        for z in range(2):
+            #I swear on my yeezys this function went through more iterations than 
+            #tyson foods went through chicken poisoners.
+            #That single bloody gradient is barely visible WHY WOULD YOU PUT THAT IN THERE???
+            #Iteration 47: Moves to each edge, at each edge sees if the color is whiter or more red, if red click
+            for i in range(len(SHIELDEDGES)):
+                a,b = SHIELDEDGES[i]
+                amtWhite = ImageGrab.grab().load()[a,b]
+                if amtWhite[1] < 211:
+                    m.move(a,b-20,True,0.5)
+                    m.click("left")
+        k.send('escape')
+        time.sleep(1.7)
+        return
+    return
 def determineTaskList(frame):
     #Set up vars
     rootdir = os.path.join(os.getcwd() + images + '\\' + majorIncidentPubba + '\\')
@@ -324,7 +422,7 @@ def determineTaskList(frame):
             #This image is always hard to find due to a changing background
             val = ps5.locateCenterOnScreen(rootdir + file, confidence=0.6)
             if not val == None:
-                print('Found job for' + file)
+                print('Found job for: ' + file)
                 doJob(file, val, rootdir)
                 return
             else:
