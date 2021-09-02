@@ -64,7 +64,7 @@ def doJob(name, centercoords, mapdir):
     ASTEROIDS_REGION = (501, 200, 890, 889)#Bounding region for asteroid window, x,y,width,height
     ELECTRICAL_RED_PULLSWITCH_COLOR = (255, 98, 0)
     ENGINEALIGNMENT_CENTER = (1300, 592)
-    ENGINEALIGNMENT_LOCATIONS = [(1371,212),(1329,328),(1297,448),(1284,575),(1285,692),(1295,794),(1328,906),(1353,995),(1376,1062),(1312, 864)]
+    ENGINEALIGNMENT_LOCATIONS = [(1371,212),(1329,328),(1297,448),(1284,575),(1285,692),(1295,794),(1328,906),(1353,995),(1376,1062),(1312, 864),(1286, 694)]
     ENGINEALIGNMENT_COLOR = (66,65,66)
     #Left to right
     ELECTRICAL_RED_PULLSWITCH_LOCATIONS = [(583, 870),(688, 872),(798, 872),(905, 870),(1011, 874),(1118, 875),(1224, 875),(1335, 874)]
@@ -215,17 +215,19 @@ def doJob(name, centercoords, mapdir):
         print('Comitting to leaf vent task')
         #Surprisingly one of the most complex tasks ever
         m.move(LEAFBLOWERSTARTPOS[0],LEAFBLOWERSTARTPOS[1], 0.6)
-        for y in range(0, 10):
-           m.move(0, 60, False, 0.1)
-            for x in range(0, 10):
-                m.move(50, 0, False, 0.1)
+        for y in range(0, 13):
+            m.move(0, 60, False)
+            for x in range(0, 15):
+                m.move(50, 0, False)
                 pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
                 if pix[2] < 100:#Only the leaves have a blue value less than 100
-                    print('Found a leaf! with ' + pix[0] + ', ' + pix[1] + ', ' + pix[2] + '.')
-                    x , y = m.get_position()
-                    m.drag(x, y, LEAFVENTCENTER[0], LEAFVENTCENTER[1])
-                    m.move(x, y, 0.2)
-            m.move(-500, 0, False, 0.1)    
+                    print('Found a leaf! with ' + str(pix[0]) + ', ' + str(pix[1]) + ', ' + str(pix[2]) + '.')
+                    cords = m.get_position()
+                    m.press()
+                    m.move(LEAFVENTCENTER[0],LEAFVENTCENTER[1],True,0.2)
+                    m.release()
+                    m.move(cords[0],cords[1], 0.2)
+            m.move(-750, 0, False, 0.1)    
         k.send('escape')
         time.sleep(1.7)
         return
@@ -235,7 +237,7 @@ def doJob(name, centercoords, mapdir):
         m.move(LEVERLOCATION[0], LEVERLOCATION[1])
         m.press()
         m.move(0, 1000, False, 0.4)#Animating here is necessary or the game wont register the lever moving
-        time.sleep(2.5)#Have to hold the lever for this timee
+        time.sleep(3.5)#Have to hold the lever for this timee
         m.release()
         k.send('escape')
         time.sleep(1.7)
@@ -248,25 +250,55 @@ def doJob(name, centercoords, mapdir):
         m.move(NAVSHIPSTART[0], NAVSHIPSTART[1], 0.3)
         x = NAVSHIPSTART[0]
         y = NAVSHIPSTART[1]
+        dist = 0
+        ship = []
+        #Find the ship
+        yy = 302
+        inc = 12
+        m.move(540, 302, True)
+        while yy < 890:
+            x, yy = m.get_position()
+            pix = ImageGrab.grab().load()[x, yy]
+            if pix[0] < 40 and pix[0] > 36:
+                print('appending the ship at: ' + str(m.get_position()) + str(pix[0]))
+                ship.append((m.get_position()[0],m.get_position()[1]))
+                break
+            m.move(0, inc, False)
+            yy = yy + inc
+            if yy >= 890:
+                if len(ship) == 0:
+                    inc = inc / 2
+                    yy = 302
+                    m.move(540, 302, True)   
+        #this task alone has wasted two nights irl. why do i keep working on this
+        print(str(ship))
+        m.move(580, 302, True)
         while y < 890:
             while x < 1475:
-                m.move(10, 0, False)
+                m.move(20, 0, False)
+                dist = dist + 20
                 x = m.get_position()[0]
                 pix = ImageGrab.grab().load()[x, y]
-                if pix[0] < 50:
-                   POINTS.append((x,y)) 
-            m.move(0, 10, False)
+                if pix[0] < 50 and pix[2] > 160:
+                    print('appending : ' + str(pix[0]) + str(m.get_position()))
+                    POINTS.append((x,y))
+                    
+            m.move(-dist, 70, False)
+            x = m.get_position()[0]
+            dist = 0
             y = m.get_position()[1]
             pix = ImageGrab.grab().load()[x, y]
-            if pix[0] < 50:
-                POINTS.append((x,y)) 
         #Move the ship through
-        m.move(centercoords[0], centercoords[1], 0.2)#To where the ship was originally found
+        m.move(ship[0][0], ship[0][1], True)#To where the ship was originally found
         x, y = m.get_position()
+        m.press()
+        POINTS.sort(key=lambda x: x[0])
+        print(str(POINTS))
         for location in POINTS:
-            m.drag(x, y, location[0], location[1],0.3)
+            m.move(location[0], location[1],True, 0.3)
             x, y = m.get_position()
             time.sleep(0.1)
+        m.release()
         k.send('escape')
         time.sleep(1.7)
         return
