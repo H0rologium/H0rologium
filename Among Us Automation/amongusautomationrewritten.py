@@ -55,6 +55,7 @@ $&&dqd#####@#####g$dbqp;..............--;bb&gg####gbdd$$
 """
 def doJob(name, centercoords, mapdir):
     rootdir = os.path.join(os.getcwd() + images + '\\' + majorIncidentPubba + 'jobs\\')
+    inProgress = 'NONE' #Determines if we had a job get interrupted, i.e. by reporting a body
     #---------------------------------------------------------------------
     #initialize job-specific variables
     #note that these coordinates are based on running the game at 1920 x 1200 resolution.
@@ -82,12 +83,21 @@ def doJob(name, centercoords, mapdir):
     #^ For the electrical spinning wheels. The middle entry is to detect when the button should be clicked (the bar only lights up at the right time)
     locs = [(705, 937), (837, 947), (962, 936), (1087, 940), (1210, 939)]#Both locs and testLoc are for test tubes
     testLoc = [(704, 650), (832, 647), (961, 648), (1091, 649), (1210, 650)]
-    TESTTUBEORIGIN = (1290,1036)#The square button to press 
+    TESTTUBEORIGIN = (1290,1036)#The square button to press
+    #For the reactor bluu squares
+    REACTMONITOR = (427, 473, 813, 856)
+    LASTLIGHT = [(1482,352),(0,192,0)]#First val is xy, second is rgb value
     #--------------------------------------------------------------------
     
     #strip filename to match method
     shorthand = name.removesuffix('.png')
     #Determine and run job
+    #Checks at the end of doJob for any issues
+    if not inProgress == 'NONE':
+        print(inProgress + ' in progress!')
+    else:
+        inProgress = shorthand
+    #
     if shorthand == 'gascan' or shorthand == 'refuel':
         #Pathing is simple, gascan is always in the storage room and the engines never move
         #Only thing would be 'guessing' which engine first. Possibly get angle of yellow arrow?
@@ -256,7 +266,7 @@ def doJob(name, centercoords, mapdir):
         print('Comitting to navship task')
         #Find the locations
         POINTS = []
-        m.move(NAVSHIPSTART[0], NAVSHIPSTART[1], 0.3)
+        m.move(NAVSHIPSTART[0], NAVSHIPSTART[1], 0.1)
         x = NAVSHIPSTART[0]
         y = NAVSHIPSTART[1]
         dist = 0
@@ -284,15 +294,15 @@ def doJob(name, centercoords, mapdir):
         m.move(580, 302, True)
         while y < 890:
             while x < 1475:
-                m.move(20, 0, False)
-                dist = dist + 20
+                m.move(18, 0, False)
+                dist = dist + 18
                 x = m.get_position()[0]
                 pix = ImageGrab.grab().load()[x, y]
                 if pix[0] < 50 and pix[2] > 160:
                     print('appending : ' + str(pix[0]) + str(m.get_position()))
                     POINTS.append((x,y))
                     
-            m.move(-dist, 70, False)
+            m.move(-dist, 69, False)
             x = m.get_position()[0]
             dist = 0
             y = m.get_position()[1]
@@ -311,12 +321,11 @@ def doJob(name, centercoords, mapdir):
         k.send('escape')
         time.sleep(1.7)
         return
-    
     if shorthand == 'wires':
         colorOrder = []
         #Criss crossing the wires
         for cable in WIRELCOORDS:
-            m.move(cable[0],cable[1],True,0.4)
+            m.move(cable[0],cable[1],True,0.2)
             pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
             for color in COLOREDWIRES:
                 if pix == color:
@@ -326,12 +335,12 @@ def doJob(name, centercoords, mapdir):
         #colorOrder values: two tuples: ((color-of-pixel),(coordinateX,coordinateY))
         for leftcable in colorOrder:
             for cables in WIRERCOORDS:
-                m.move(cables[0],cables[1],True,0.4)
+                m.move(cables[0],cables[1],True,0.2)
                 pix = ImageGrab.grab().load()[m.get_position()[0], m.get_position()[1]]
                 if leftcable[0] == pix:#These lines need to connect
                     m.move(leftcable[1][0],leftcable[1][1])
                     m.press()
-                    m.move(cables[0],cables[1],True,0.4)
+                    m.move(cables[0],cables[1],True,0.2)
                     m.release()
         #The task loops one additional time so theres no need to exit or wait
         return
@@ -376,17 +385,58 @@ def doJob(name, centercoords, mapdir):
         #Matching blue patterns
         print('Comitting to pattern matching task')
         #Possibly record each step as an image and use that to click?
-
-            
+        #^ this is kind of what i ended up doing
+        while True:
+            k.send('escape')
+            time.sleep(0.5)
+            m.move(usebtncoords[0],usebtncoords[1],True,0.1)
+            print('click!')
+            m.click()
+            time.sleep(1.08)
+            spotsToClick = []
+            while True:
+                val = pagui.locateCenterOnScreen(rootdir + 'square.png', region=REACTMONITOR)
+                if not val == None:
+                    print('blue square at: ' + str(val))
+                    spotsToClick.append(val)
+                    time.sleep(0.2)
+                else:
+                    break
+            for cliccer in spotsToClick:
+                m.move(cliccer[0] + 650 ,cliccer[1],True,0.2)
+                m.click()
+            m.move(LASTLIGHT[0][0],LASTLIGHT[0][1], True,0.1)
+            if ImageGrab.grab().load()[m.get_position()[0],m.get_position()[1]] == LASTLIGHT[1]:
+                break
+            else:
+                print('onto the next stage of the reactor!')    
+        print('Finally, done with the blue square reactor')
         k.send('escape')
         time.sleep(1.7)
         return
     if shorthand == 'cleanvent':
         #Cleaning out the sussy vent
         print('Committing to cleaning out the vent')
-
-
-
+        m.move(centercoords[0],centercoords[1])
+        m.click()
+        #We're gonna be reeeal sussy and do this the 'shit' way as they say down south
+        x = 512
+        y = 205
+        m.move(x, y, True, 0.1)
+        while y < 983:
+            while x < 1412:
+                x = x + 70
+                m.move(70, 0, False, 0.1)
+                m.click()
+            m.move(512, y, True, 0.1)
+            x = 512
+            m.move(0, 90, False, 0.1)
+            y = y + 90
+            val = pagui.locateOnScreen(rootdir + 'lunchbox.png', grayscale=True)
+            if val == None:
+                print('Done with the lunchbox!')
+                break
+        k.send('escape')
         time.sleep(1.7)
         return
     if shorthand == 'shields':
@@ -408,7 +458,14 @@ def doJob(name, centercoords, mapdir):
         k.send('escape')
         time.sleep(1.7)
         return
-    return
+    #Make sure job didnt get interrupted
+    if not pagui.locateOnScreen(os.path.join(os.getcwd() + images + '\\reportedstripes.png')) == None:
+        print('Task was interrupted by someone dying')
+        return
+    else:
+        print('Nothing in progress, resetting')
+        inProgress = 'NONE'
+        return
 def determineTaskList(frame):
     #Set up vars
     rootdir = os.path.join(os.getcwd() + images + '\\' + majorIncidentPubba + '\\')
