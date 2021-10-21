@@ -1,5 +1,5 @@
 def test_main():
-    print('LMAO!!')
+    print(this is supposed to fail a unit test)
     return 69
     
    
