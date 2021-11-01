@@ -1,4 +1,4 @@
-def main_test():
+def test_main():
   x = 2
   y = 15
   return x * y
