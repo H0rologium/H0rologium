@@ -16,3 +16,8 @@ HorosUsefulMethods/HorosUsefulMethods/net5.0/ref/
 RemoteHostManager/bin/
 RemoteHostManager/obj/
 RemoteHostManager/RemoteHostManager/
+
+#ignores for 'filelistr'
+
+FileListr/FileListr/bin/
+FileListr/FileListr/obj/
