@@ -1,3 +1,0 @@
-## This project is my entry to tinkering with XML files.
-
-not much else here...
