@@ -1,6 +1,0 @@
-F:\Modding\LavaPower\Source\MagmaPower\bin\Debug\MagmaPower.dll
-F:\Modding\LavaPower\Source\MagmaPower\bin\Debug\MagmaPower.pdb
-F:\Modding\LavaPower\Source\MagmaPower\obj\Debug\LavaPower.csproj.AssemblyReference.cache
-F:\Modding\LavaPower\Source\MagmaPower\obj\Debug\LavaPower.csproj.CoreCompileInputs.cache
-F:\Modding\LavaPower\Source\MagmaPower\obj\Debug\MagmaPower.dll
-F:\Modding\LavaPower\Source\MagmaPower\obj\Debug\MagmaPower.pdb

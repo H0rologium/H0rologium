@@ -1,6 +1,0 @@
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\bin\Debug\FoxOverhaul.dll
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\bin\Debug\FoxOverhaul.pdb
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\obj\Debug\FoxOverhaul.csproj.AssemblyReference.cache
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\obj\Debug\FoxOverhaul.csproj.CoreCompileInputs.cache
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\obj\Debug\FoxOverhaul.dll
-C:\Users\Skeyan\AppData\Roaming\Isolated Rimworld\1.6\Rimworld\Mods\3314038926\Source\FoxOverhaul\obj\Debug\FoxOverhaul.pdb
