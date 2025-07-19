@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+<!--Electric Smelter-->
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="ElectricSmelter"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+<!--Biofuel Refinery-->	
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="BiofuelRefinery"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+<!--Electric Stove-->		
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="ElectricStove"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+<!--Fueled Stove-->		
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="FueledStove"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+<!--Brewery-->	
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="Brewery"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+<!--Electric Crematorium-->	
+	<Operation Class="PatchOperationAdd">
+	<success>Always</success>
+		<xpath>/Defs/ThingDef[defName="ElectricCrematorium"]/comps</xpath>
+			<value>
+				<li Class="CompProperties_AffectedByFacilities">
+					<linkableFacilities>
+						<li>ToolCabinet</li>
+					</linkableFacilities>
+				</li>
+			</value>
+	</Operation>
+
+<!--Makes Tool Cabinets work with Glittertech-->
+
+<!--Matter Fabricator-->	
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+        <xpath>/Defs/ThingDef[defName="Matterfab"]/comps</xpath>
+        	<value>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        	</value>
+    </Operation>
+
+<!--Electrolyzer-->
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+        <xpath>/Defs/ThingDef[defName="Electrolyzer"]/comps</xpath>
+        	<value>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        	</value>
+    </Operation>
+
+<!--Robotic assembler-->
+	<Operation Class="PatchOperationAdd">
+		<success>Always</success>
+        <xpath>/Defs/ThingDef[defName="RobAssem"]/comps</xpath>
+        	<value>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        	</value>
+    </Operation>
+
+
+
+<!-- If you ever find this, comment something funny on the mod's page :D thanks for looking at my shitty code -->
+<!-- Reminder for future and dumber me... -->
+<!-- If I ever want to make this mod work with other mod's workbenches, I have to add them before this last code block -->
+<!-- Makes Tool Cabinets work with any workbench from any mod as long as it has vanilla Tool Cabinet linked -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities[li = 'ToolCabinet']</xpath>
+			<value>
+				<li>T2ToolCabinet</li>
+				<li>T3ToolCabinet</li>
+				<li>T4ToolCabinet</li>
+				<li>T5ToolCabinet</li>
+				<li>T6ToolCabinet</li>
+			</value>
+	</Operation>
+
+</Patch>

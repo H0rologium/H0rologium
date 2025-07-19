@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+ <ResearchProjectDef>
+ <tab>Cabinets</tab>
+    <defName>Tier2Tool</defName>
+    <label>T2 Tool Cabinets</label>
+    <description>Learn how to implement more than basic tools to make more advanced tool cabinets</description>
+    <baseCost>800</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+<ResearchProjectDef>
+
+    <defName>Tier3Tool</defName>
+	 <tab>Cabinets</tab>
+    <label>T3 Tool Cabinets</label>
+    <description>Learn how to implement more tools to make more advanced tool cabinets</description>
+    <baseCost>2400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+	<prerequisites>
+	<li>Machining</li>
+      <li>Tier2Tool</li>
+    </prerequisites>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+   <defName>Tier4Tool</defName>
+    <tab>Cabinets</tab>
+    <label>T4 Tool Cabinets</label>
+    <description>Learn how to implement power tools to make more advanced tool cabinets</description>
+    <baseCost>4800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+	<prerequisites>
+	<li>Fabrication</li>
+	<li>MicroelectronicsBasics</li>
+	<li>Machining</li>
+	<li>Electricity</li>
+      <li>Tier3Tool</li>
+    </prerequisites>
+	<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+	 <defName>Tier5Tool</defName>
+	  <tab>Cabinets</tab>
+    <label>T5 Tool Cabinets</label>
+    <description>Learn how to implement basic mechanoid and glitterworld tech, making even more advanced tool cabinets.</description>
+    <baseCost>8000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+	<prerequisites>
+	<li>Fabrication</li>
+	<li>MicroelectronicsBasics</li>
+	<li>Machining</li>
+	<li>Electricity</li>
+      <li>Tier4Tool</li>
+    </prerequisites>
+	<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+	<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+	</ResearchProjectDef>
+	
+	<ResearchProjectDef>
+	 <defName>Tier6Tool</defName>
+	  <tab>Cabinets</tab>
+    <label>T6 Tool Cabinets</label>
+    <description>Learn how to implement full glitterword tech, greatly incresing efficiency with new advanced tool cabinets.</description>
+    <baseCost>15000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+	<prerequisites>
+	<li>Fabrication</li>
+	<li>MicroelectronicsBasics</li>
+	<li>Machining</li>
+	<li>Electricity</li>
+      <li>Tier5Tool</li>
+    </prerequisites>
+	<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+	<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+  </ResearchProjectDef>
+</Defs>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+<IncidentDef>
+    <defName>NBF_Fox_Demon_Passes</defName>
+    <label>demon foxes passing</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Demon</workerClass>
+    <baseChance>0.3</baseChance>
+    <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Dark_Passes</defName>
+  <label>dark foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Dark</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Dragon_Passes</defName>
+  <label>dragon foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Dragon</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Flesh_Passes</defName>
+  <label>flesh foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Flesh</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Gaia_Passes</defName>
+  <label>gaia foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Gaia</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Insectoid_Passes</defName>
+  <label>insectoid foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Insectoid</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Mechanoid_Passes</defName>
+  <label>mechanoid foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Mechanoid</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+<IncidentDef>
+  <defName>NBF_Fox_Shell_Passes</defName>
+  <label>shell foxes passing</label>
+  <category>Misc</category>
+  <targetTags>
+    <li>Map_PlayerHome</li>
+  </targetTags>
+  <workerClass>FoxOverhaul.IncidentWorker_FoxPassing_Shell</workerClass>
+  <baseChance>0.3</baseChance>
+  <minRefireDays>15</minRefireDays>
+</IncidentDef>
+
+</Defs>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Statue of Potato</name>
+	<author>Horologium</author>
+	<supportedVersions>
+		<li>1.4</li>
+		<li>1.5</li>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>horo.potato</packageId>
+	<steamAppId>1357926846</steamAppId>
+	<url></url>
+	<description>With all of these amazing new ways to enjoy colony life on the rim, sometimes its good to go back to your roots.
+	These classic Starchy Statues can be made at a normal artist bench. They have a separate recipe so that you can specifically master the art of the potato. 
+    
+    </description>
+</ModMetaData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ModMetaData>
+    <name>More Toolboxes</name>
+    <author>Xion, Horologium</author>
+   <supportedVersions>
+      <li>1.0</li>
+      <li>1.1</li>
+      <li>1.2</li>
+      <li>1.3</li>
+      <li>1.4</li>
+      <li>1.5</li>
+	  <li>1.6</li>
+   </supportedVersions>
+   <packageId>Xion.MoreToolboxes</packageId>
+    <description>
+	Adds new researchable toolboxes to supplement your endgame! Each tier of research unlocks toolboxes that will grant bigger boosts to production at bigger costs. Get things done quicker! Each tier adds ~10% more efficiency to their attached buildings. Currently only compatible with vanilla buildings but I may add patches for big mods later on.  
+</description>
+ </ModMetaData>

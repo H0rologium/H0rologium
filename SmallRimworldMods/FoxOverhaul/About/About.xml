@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Fox Overhaul</name>
+	<author>Eragon, Noobert, Horologium</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>Horologium.NoobertFoxOverhaul.Updated</packageId>
+	<modDependencies>
+	  <li>
+		<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
+		<displayName>Vanilla Expanded Framework</displayName>
+		<downloadUrl>https://github.com/AndroidQuazar/VanillaExpandedFramework</downloadUrl>
+		<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2023507013</steamWorkshopUrl>
+	  </li>
+	</modDependencies>
+	<description>Fox Overhaul adds twenty brand new foxes into RimWorld with some light mechanics added.</description>	
+</ModMetaData>

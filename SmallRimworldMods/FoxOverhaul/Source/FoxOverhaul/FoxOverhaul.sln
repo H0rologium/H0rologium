@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoxOverhaul", "FoxOverhaul.csproj", "{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {198F1425-DA8D-4CAB-884D-4E921E2EC016}
+	EndGlobalSection
+EndGlobal

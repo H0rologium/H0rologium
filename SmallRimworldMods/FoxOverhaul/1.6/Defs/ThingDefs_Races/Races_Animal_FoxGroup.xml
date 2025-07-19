@@ -1,0 +1,2279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ThingBaseFox" Name="NBF_ThingBaseFox" Abstract="True">
+    <label>Hello :) This label is simply a placeholder text for whatever future things I plan to add.</label>
+  </ThingDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+  <ThingDef ParentName="NBF_ThingBaseFox">
+    <defName>NBF_Fox_DemonRace</defName>
+    <description>A small canine that seems to have developed a demonlike appearance. Luciferium shards are growing from its skin.</description>
+    <label>demon fox</label>
+    <statBases>
+      <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+      <MarketValue>700</MarketValue> <!--200-->
+      <ComfyTemperatureMin>0</ComfyTemperatureMin> <!-- -35 -->
+      <ComfyTemperatureMax>75</ComfyTemperatureMax> <!-- 40 -->
+      <Wildness>0.93</Wildness>
+    </statBases>
+    <race>
+      <useMeatFrom>Fox_Fennec</useMeatFrom>
+      <body>QuadrupedAnimalWithPawsAndTail</body>
+      <predator>true</predator>
+      <petness>0.1</petness>
+      <baseBodySize>0.55</baseBodySize>
+      <baseHungerRate>0.5</baseHungerRate>
+      <baseHealthScale>0.80</baseHealthScale>
+      <foodType>CarnivoreAnimal</foodType>
+      <leatherDef>Leather_Fox</leatherDef>
+      <nameOnTameChance>1</nameOnTameChance>
+      <trainability>Advanced</trainability>
+    </race>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power> <!--8-->
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>9</power> <!--8-->
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>10</power> <!--9-->
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.9</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power> <!--4-->
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Shearable">
+        <woolDef>Luciferium</woolDef>
+        <shearIntervalDays>15</shearIntervalDays>
+        <woolAmount>1</woolAmount>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBaseFox">
+    <defName>NBF_Fox_Demon</defName>
+    <label>demon fox</label>
+    <labelPlural>demon foxes</labelPlural>
+    <race>NBF_Fox_DemonRace</race>
+    <combatPower>50</combatPower>
+    <ecoSystemWeight>1</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Demon/NBF_Fox_Demon</texPath>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+          <drawSize>1.0</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Demon/NBF_Fox_Demon</texPath>
+          <drawSize>1.2</drawSize>
+          <shadowData>
+            <volume>(0.25, 0.3, 0.25)</volume>
+            <offset>(0,0,-0.15)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+          <drawSize>1.2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Demon/NBF_Fox_Demon</texPath>
+          <drawSize>1.68</drawSize>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+          <drawSize>1.68</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_MechanoidRace</defName>
+  <description>A small faux-furred metal canine. Although friendly, they have incredibly sharp metal claws that can cause horrific wounds.</description>
+  <label>robot fox</label>
+  <statBases>
+    <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+    <MarketValue>600</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-100</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <MeatAmount>0</MeatAmount>
+    <Wildness>0.93</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.00000000001</baseHungerRate> <!--0.1-->
+    <baseHealthScale>1</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Steel</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>16</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>16</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>8</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>ComponentIndustrial</woolDef>
+      <shearIntervalDays>10</shearIntervalDays>
+      <woolAmount>2</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Mechanoid</defName>
+  <label>robot fox</label>
+  <labelPlural>robot foxes</labelPlural>
+  <race>NBF_Fox_MechanoidRace</race>
+  <combatPower>60</combatPower>
+  <ecoSystemWeight>1</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mechanoid/NBF_Fox_Mechanoid</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mechanoid/NBF_Fox_Mechanoid</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mechanoid/NBF_Fox_Mechanoid</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_BeautifulRace</defName>
+  <description>A small, beautiful canine. These foxes think of themselves as royalty, and take their sweet time living life.</description>
+  <label>beautiful fox</label>
+  <statBases>
+    <MoveSpeed>3</MoveSpeed> <!--4.6-->
+    <MarketValue>350</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <PawnBeauty>100</PawnBeauty>
+    <Wildness>0.29</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.12</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>4</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>4</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <capacities>
+        <li>Bite</li>
+      </capacities>
+      <power>9</power> <!--9-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      <chanceFactor>0.9</chanceFactor>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>4</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>Leather_Fox</woolDef>
+      <shearIntervalDays>10</shearIntervalDays>
+      <woolAmount>30</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Beautiful</defName>
+  <label>beautiful fox</label>
+  <race>NBF_Fox_BeautifulRace</race>
+  <combatPower>32</combatPower>
+  <ecoSystemWeight>0.25</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Beautiful/NBF_Fox_Beaut</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Beautiful/NBF_Fox_Beaut</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Beautiful/NBF_Fox_Beaut</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_ChemfuelRace</defName>
+  <description>A small canine with boiling pouches of chemfuel covering its body. It seems to be enjoying itself.</description>
+  <label>chemfuel fox</label>
+  <statBases>
+    <MoveSpeed>3.5</MoveSpeed> <!--4.6-->
+    <MarketValue>500</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.79</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <deathAction>
+        <workerClass>DeathActionWorker_BigExplosion</workerClass>
+    </deathAction>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.12</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>7</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>7</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <capacities>
+        <li>Bite</li>
+      </capacities>
+      <power>9</power> <!--9-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      <chanceFactor>0.9</chanceFactor>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>4</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="CompProperties_Milkable">
+      <milkDef>Chemfuel</milkDef>
+      <milkIntervalDays>2</milkIntervalDays>
+      <milkAmount>11</milkAmount>
+      <milkFemaleOnly>false</milkFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Chemfuel</defName>
+  <label>chemfuel fox</label>
+  <race>NBF_Fox_ChemfuelRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.25</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chemfuel/NBF_Fox_Chem</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chemfuel/NBF_Fox_Chem</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chemfuel/NBF_Fox_Chem</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_ChickenRace</defName>
+  <description>A small... Chicken? It's a big chicken but the size of a fox.</description>
+  <label>chicken fox</label>
+  <statBases>
+    <MoveSpeed>3.5</MoveSpeed> <!--4.6-->
+    <MarketValue>450</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.53</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.14</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <comps>
+    <li Class="CompProperties_EggLayer">
+      <eggUnfertilizedDef>EggChickenUnfertilized</eggUnfertilizedDef>
+      <eggFertilizedDef>EggChickenFertilized</eggFertilizedDef>
+      <eggFertilizationCountMax>1</eggFertilizationCountMax>
+      <eggLayIntervalDays>1</eggLayIntervalDays>
+      <eggCountRange>1</eggCountRange>
+      <eggLayFemaleOnly>false</eggLayFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Chicken</defName>
+  <label>chicken fox</label>
+  <race>NBF_Fox_ChickenRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.25</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chicken/NBF_Fox_Chicken</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chicken/NBF_Fox_Chicken</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Chicken/NBF_Fox_Chicken</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_CreamRace</defName>
+  <description>A small canine with a soft cream-colored fur. The milk it produces has medicinal properties and works effectively as a herbal medicine substitute.</description>
+  <label>cream fox</label>
+  <statBases>
+    <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+    <MarketValue>450</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.45</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.14</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.6</baseHealthScale> <!--0.70-->
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <comps>
+    <li Class="CompProperties_Milkable">
+      <milkDef>NBF_MedicineCream</milkDef>
+      <milkIntervalDays>10</milkIntervalDays>
+      <milkAmount>4</milkAmount>
+      <milkFemaleOnly>false</milkFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Cream</defName>
+  <label>cream fox</label>
+  <race>NBF_Fox_CreamRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cream/NBF_Fox_Cream</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cream/NBF_Fox_Cream</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cream/NBF_Fox_Cream</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_CuteRace</defName>
+  <description>A small canine with very soft, and very pink fur. These little foxes bring joy to anyone nearby.</description>
+  <label>cute fox</label>
+  <statBases>
+    <MoveSpeed>5</MoveSpeed> <!--4.6-->
+    <MarketValue>400</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <PawnBeauty>20</PawnBeauty>
+    <Wildness>0.75</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>false</predator>
+    <petness>1</petness>
+    <baseBodySize>0.30</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.1</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>4</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>4</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <capacities>
+        <li>Bite</li>
+      </capacities>
+      <power>9</power> <!--9-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      <chanceFactor>0.9</chanceFactor>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>4</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="VEF.AnimalBehaviours.CompProperties_ThoughtEffecter">
+      <radius>10</radius>
+      <tickInterval>500</tickInterval>
+      <thoughtDef>NBF_Fox_Cute_Thought</thoughtDef>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Cute</defName>
+  <label>cute fox</label>
+  <race>NBF_Fox_CuteRace</race>
+  <combatPower>31</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cute/NBF_Fox_Cute</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cute/NBF_Fox_Cute</texPath>
+        <drawSize>1</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Cute/NBF_Fox_Cute</texPath>
+        <drawSize>1</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_DarkRace</defName>
+  <description>A small canine that has a dark purple fur. They smell like a rotting corpse, and are known to produce fully formed human skulls.</description>
+  <label>dark fox</label>
+  <statBases>
+    <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+    <MarketValue>600</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-100</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>30</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.45</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>false</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.1</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.6</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Dark</defName>
+  <label>dark fox</label>
+  <race>NBF_Fox_DarkRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.65</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dark/NBF_Fox_Dark</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dark/NBF_Fox_Dark</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dark/NBF_Fox_Dark</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_DragonRace</defName>
+  <description>A somewhat-large canine that has wings and is covered in scales. Fast and strong, this fox is something to be worried about. It can also breathe fire.</description>
+  <label>dragon fox</label>
+  <statBases>
+    <MoveSpeed>6</MoveSpeed> <!--4.6-->
+    <MarketValue>1000</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-65</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>70</ComfyTemperatureMax> <!-- 40 -->
+    <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+    <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+    <Wildness>0.85</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.2</petness>
+    <baseBodySize>0.80</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.2</baseHungerRate> <!--0.1-->
+    <baseHealthScale>1.2</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>18</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>18</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <capacities>
+        <li>Bite</li>
+      </capacities>
+      <power>19</power> <!--9-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+      <chanceFactor>0.9</chanceFactor>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>14</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <verbs>
+    <li>
+      <verbClass>Verb_Shoot</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_InfernoCannon</defaultProjectile>
+      <forcedMissRadius>3.5</forcedMissRadius>
+      <ai_AvoidFriendlyFireRadius>3</ai_AvoidFriendlyFireRadius>
+      <warmupTime>3</warmupTime>
+      <range>26.9</range>
+      <burstShotCount>1</burstShotCount>
+      <soundCast>InfernoCannon_Fire</soundCast>
+      <soundCastTail>GunTail_Light</soundCastTail>
+      <muzzleFlashScale>14</muzzleFlashScale>
+    </li>
+  </verbs>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Dragon</defName>
+  <label>dragon fox</label>
+  <race>NBF_Fox_DragonRace</race>
+  <combatPower>103</combatPower>
+  <ecoSystemWeight>0.95</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dragon/NBF_Fox_Dragon</texPath>
+        <drawSize>1.2</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dragon/NBF_Fox_Dragon</texPath>
+        <drawSize>1.68</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Dragon/NBF_Fox_Dragon</texPath>
+        <drawSize>2.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>2.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_FleshRace</defName>
+  <description>A small canine with no fur at all. It produces fully formed hearts from its rear when fertilized and lungs when unfertilized.</description>
+  <label>flesh fox</label>
+  <statBases>
+    <MoveSpeed>3</MoveSpeed> <!--4.6-->
+    <MarketValue>1000</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-25</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>30</ComfyTemperatureMax> <!-- 40 -->
+    <LeatherAmount>0</LeatherAmount>
+    <Wildness>0.85</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.2</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability> <!-- N, S, I, A -->
+  </race>
+  <comps>
+    <li Class="CompProperties_EggLayer">
+      <eggUnfertilizedDef>Lung</eggUnfertilizedDef>
+      <eggFertilizedDef>Heart</eggFertilizedDef>
+      <eggFertilizationCountMax>1</eggFertilizationCountMax>
+      <eggLayIntervalDays>10</eggLayIntervalDays>
+      <eggCountRange>1</eggCountRange>
+      <eggLayFemaleOnly>false</eggLayFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Flesh</defName>
+  <label>flesh fox</label>
+  <race>NBF_Fox_FleshRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.75</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Flesh/NBF_Fox_Flesh</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Flesh/NBF_Fox_Flesh</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Flesh/NBF_Fox_Flesh</texPath>
+        <drawSize>1.2</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_GaiaRace</defName>
+  <description>A small canine capable of hosting its own ecosystem on its back, complete with miniature creatures. Who knows, maybe one day humans will evolve on one's back. Gaia foxes produce grass every other day and don't require food.</description>
+  <label>gaia fox</label>
+  <statBases>
+    <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+    <MarketValue>450</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-30</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>45</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.35</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>false</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.00000000001</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability> <!-- N, S, I, A -->
+  </race>
+  <comps>
+    <li Class="CompProperties_EggLayer">
+      <eggUnfertilizedDef>Plant_Grass</eggUnfertilizedDef>
+      <eggFertilizedDef>Plant_Grass</eggFertilizedDef>
+      <eggFertilizationCountMax>1</eggFertilizationCountMax>
+      <eggLayIntervalDays>1</eggLayIntervalDays>
+      <eggCountRange>1</eggCountRange>
+      <eggLayFemaleOnly>false</eggLayFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Gaia</defName>
+  <label>gaia fox</label>
+  <race>NBF_Fox_GaiaRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.65</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Gaia/NBF_Fox_Gaia</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Gaia/NBF_Fox_Gaia</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Gaia/NBF_Fox_Gaia</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_InsectoidRace</defName>
+  <description>A small insect that has the head of a megaspider and the body of a fox. It can be milked for insect jelly.</description>
+  <label>insect fox</label>
+  <statBases>
+    <MoveSpeed>4.6</MoveSpeed> <!--4.6-->
+    <MarketValue>800</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-30</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>45</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.35</Wildness> <!--0.75-->
+  </statBases>
+  <race>
+    <useMeatFrom>Megaspider</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize> <!--0.55-->
+    <baseHungerRate>0.4</baseHungerRate> <!--0.1-->
+    <baseHealthScale>0.7</baseHealthScale> <!--0.70-->
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability> <!-- N, S, I, A -->
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>8</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>8</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>4</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="CompProperties_Milkable">
+      <milkDef>InsectJelly</milkDef>
+      <milkIntervalDays>10</milkIntervalDays>
+      <milkAmount>6</milkAmount>
+      <milkFemaleOnly>false</milkFemaleOnly>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Insectoid</defName>
+  <label>insect fox</label>
+  <race>NBF_Fox_InsectoidRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.65</ecoSystemWeight> <!--0.25-->
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Insectoid/NBF_Fox_Insectoid</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Insectoid/NBF_Fox_Insectoid</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Insectoid/NBF_Fox_Insectoid</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_MushroomRace</defName>
+  <description>A small canine covered in gray mushrooms. It's sort of off-putting, but it seems happy enough.</description>
+  <label>mushroom fox</label>
+  <statBases>
+    <MoveSpeed>3</MoveSpeed> <!--4.6-->
+    <MarketValue>400</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.75</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize>
+    <baseHungerRate>0.13</baseHungerRate>
+    <baseHealthScale>0.70</baseHealthScale>
+    <foodType>CarnivoreAnimal</foodType>
+    <leatherDef>RawFungus</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability>
+  </race>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>RawFungus</woolDef>
+      <shearIntervalDays>10</shearIntervalDays>
+      <woolAmount>60</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Mushroom</defName>
+  <label>mushroom fox</label>
+  <race>NBF_Fox_MushroomRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mushroom/NBF_Fox_Shroom</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mushroom/NBF_Fox_Shroom</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Mushroom/NBF_Fox_Shroom</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_RiceRace</defName>
+  <description>A small canine covered in rice sprouts.</description>
+  <label>rice fox</label>
+  <statBases>
+    <MoveSpeed>4.4</MoveSpeed> <!--4.6-->
+    <MarketValue>400</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+	<Wildness>0.75</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize>
+    <baseHungerRate>0.13</baseHungerRate>
+    <baseHealthScale>0.70</baseHealthScale>
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>RawRice</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability>
+  </race>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>RawRice</woolDef>
+      <shearIntervalDays>8</shearIntervalDays>
+      <woolAmount>60</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Rice</defName>
+  <label>rice fox</label>
+  <race>NBF_Fox_RiceRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Rice/NBF_Fox_Rice</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Rice/NBF_Fox_Rice</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Rice/NBF_Fox_Rice</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_ShellRace</defName>
+  <description>A metal canine that is entirely made of explosive powder and shell casing. An inner factory produces high-explosive shells, but when the fox "dies", the explosion is akin to an antigrain warhead going off.</description>
+  <label>shell fox</label>
+  <statBases>
+    <MoveSpeed>3</MoveSpeed> <!--4.6-->
+    <MarketValue>1500</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-100</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>100</ComfyTemperatureMax> <!-- 40 -->
+    <MeatAmount>0</MeatAmount>
+    <LeatherAmount>0</LeatherAmount>
+    <Wildness>0.15</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>false</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize>
+    <baseHungerRate>0.00000000001</baseHungerRate>
+    <baseHealthScale>0.70</baseHealthScale>
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>Leather_Fox</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Intermediate</trainability>
+  </race>
+  <tools>
+    <li>
+      <label>left claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>2</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>right claw</label>
+      <capacities>
+        <li>Scratch</li>
+      </capacities>
+      <power>2</power> <!--8-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+      <surpriseAttack>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>14</amount>
+          </li>
+        </extraMeleeDamages>
+      </surpriseAttack>
+    </li>
+    <li>
+      <label>head</label>
+      <capacities>
+        <li>Blunt</li>
+      </capacities>
+      <power>14</power> <!--4-->
+      <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      <chanceFactor>0.2</chanceFactor>
+    </li>
+  </tools>
+  <comps>
+    <li Class="CompProperties_EggLayer">
+      <eggUnfertilizedDef>Shell_HighExplosive</eggUnfertilizedDef>
+      <eggFertilizedDef>Shell_HighExplosive</eggFertilizedDef>
+      <eggFertilizationCountMax>1</eggFertilizationCountMax>
+      <eggLayIntervalDays>10</eggLayIntervalDays>
+      <eggCountRange>1</eggCountRange>
+      <eggLayFemaleOnly>false</eggLayFemaleOnly>
+    </li>
+    <li Class="CompProperties_Explosive">
+      <explosiveRadius>14.9</explosiveRadius>
+      <explosiveDamageType>BombSuper</explosiveDamageType>
+      <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+      <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+      <chanceToStartFire>0.22</chanceToStartFire>
+      <damageFalloff>true</damageFalloff>
+      <explosionEffect>GiantExplosion</explosionEffect>
+      <explosionSound>Explosion_GiantBomb</explosionSound>
+      <wickTicks>60~120</wickTicks>
+    </li>
+  </comps>
+  <verbs>
+    <li>
+      <verbClass>Verb_Shoot</verbClass>
+      <accuracyTouch>1</accuracyTouch>
+      <accuracyShort>.85</accuracyShort>
+      <accuracyMedium>.65</accuracyMedium>
+      <accuracyLong>.50</accuracyLong>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Bullet_Shell_HighExplosive</defaultProjectile>
+      <warmupTime>24.9</warmupTime>
+      <range>28.9</range>
+      <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+      <burstShotCount>1</burstShotCount>
+      <forcedMissRadius>10</forcedMissRadius>
+      <soundCast>Mortar_LaunchA</soundCast>
+      <soundCastTail>GunTail_Light</soundCastTail>
+      <commonality>.5</commonality>
+    </li>
+  </verbs>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Shell</defName>
+  <label>shell fox</label>
+  <race>NBF_Fox_ShellRace</race>
+  <combatPower>200</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Shell/NBF_Fox_Shell</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Shell/NBF_Fox_Shell</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Shell/NBF_Fox_Shell</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_SteelRace</defName>
+  <description>A small rusted canine. Its fur is fake and rough, but it can be used as steel if harvested.</description>
+  <label>steel fox</label>
+  <statBases>
+    <MoveSpeed>4.4</MoveSpeed> <!--4.6-->
+    <MarketValue>500</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <Wildness>0.75</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize>
+    <baseHungerRate>0.2</baseHungerRate>
+    <baseHealthScale>0.80</baseHealthScale>
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>Steel</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability>
+  </race>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>Steel</woolDef>
+      <shearIntervalDays>5</shearIntervalDays>
+      <woolAmount>30</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Steel</defName>
+  <label>steel fox</label>
+  <race>NBF_Fox_SteelRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Steel/NBF_Fox_Steel</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Steel/NBF_Fox_Steel</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Steel/NBF_Fox_Steel</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox" Name="NBF_StoneFox" Abstract="True">
+  <description>A small stony fox. It somehow grows more of itself, even though it has never been seen eating.</description>
+  <statBases>
+    <MoveSpeed>2</MoveSpeed> <!--4.6-->
+    <ComfyTemperatureMin>-100</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <MeatAmount>0</MeatAmount>
+    <LeatherAmount>0</LeatherAmount>
+    <Wildness>0.1</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>false</predator>
+    <petness>0</petness>
+    <baseBodySize>0.6</baseBodySize>
+    <baseHungerRate>0.00000000001</baseHungerRate>
+    <baseHealthScale>1</baseHealthScale>
+    <foodType>OmnivoreAnimal</foodType>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>None</trainability>
+  </race>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox" Name="NBF_StoneFoxPawnKind" Abstract="True">
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.45</ecoSystemWeight>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_StoneFox">
+  <defName>NBF_Fox_SandstoneRace</defName>
+  <label>sandstone fox</label>
+  <statBases>
+    <MarketValue>360</MarketValue>
+  </statBases>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>BlocksSandstone</woolDef>
+      <shearIntervalDays>15</shearIntervalDays>
+      <woolAmount>100</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="NBF_StoneFoxPawnKind">
+  <defName>NBF_Fox_Sandstone</defName>
+  <label>sandstone fox</label>
+  <race>NBF_Fox_SandstoneRace</race>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.0</drawSize>
+        <color>(126,104,94)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.2</drawSize>
+        <color>(126,104,94)</color>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.68</drawSize>
+        <color>(126,104,94)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_StoneFox">
+  <defName>NBF_Fox_GraniteRace</defName>
+  <label>granite fox</label>
+  <statBases>
+    <MarketValue>400</MarketValue>
+  </statBases>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>BlocksGranite</woolDef>
+      <shearIntervalDays>15</shearIntervalDays>
+      <woolAmount>100</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="NBF_StoneFoxPawnKind">
+  <defName>NBF_Fox_Granite</defName>
+  <label>granite fox</label>
+  <race>NBF_Fox_GraniteRace</race>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.0</drawSize>
+        <color>(105,95,97)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.2</drawSize>
+        <color>(105,95,97)</color>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.68</drawSize>
+        <color>(105,95,97)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_StoneFox">
+  <defName>NBF_Fox_LimestoneRace</defName>
+  <label>limestone fox</label>
+  <statBases>
+    <MarketValue>400</MarketValue>
+  </statBases>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>BlocksLimestone</woolDef>
+      <shearIntervalDays>15</shearIntervalDays>
+      <woolAmount>100</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="NBF_StoneFoxPawnKind">
+  <defName>NBF_Fox_Limestone</defName>
+  <label>limestone fox</label>
+  <race>NBF_Fox_LimestoneRace</race>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.0</drawSize>
+        <color>(158,153,135)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.2</drawSize>
+        <color>(158,153,135)</color>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.68</drawSize>
+        <color>(158,153,135)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_StoneFox">
+  <defName>NBF_Fox_SlateRace</defName>
+  <label>slate fox</label>
+  <statBases>
+    <MarketValue>400</MarketValue>
+  </statBases>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>BlocksSlate</woolDef>
+      <shearIntervalDays>15</shearIntervalDays>
+      <woolAmount>100</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="NBF_StoneFoxPawnKind">
+  <defName>NBF_Fox_Slate</defName>
+  <label>slate fox</label>
+  <race>NBF_Fox_SlateRace</race>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.0</drawSize>
+        <color>(70,70,70)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.2</drawSize>
+        <color>(70,70,70)</color>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.68</drawSize>
+        <color>(70,70,70)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_StoneFox">
+  <defName>NBF_Fox_MarbleRace</defName>
+  <label>marble fox</label>
+  <statBases>
+    <MarketValue>500</MarketValue>
+  </statBases>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>BlocksMarble</woolDef>
+      <shearIntervalDays>15</shearIntervalDays>
+      <woolAmount>100</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="NBF_StoneFoxPawnKind">
+  <defName>NBF_Fox_Marble</defName>
+  <label>marble fox</label>
+  <race>NBF_Fox_MarbleRace</race>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.0</drawSize>
+        <color>(132,135,132)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.2</drawSize>
+        <color>(132,135,132)</color>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Stone/NBF_Fox_Stone</texPath>
+        <drawSize>1.68</drawSize>
+        <color>(132,135,132)</color>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+<!--===========================================-->
+<!--===========================================-->
+<!--===========================================-->
+
+<ThingDef ParentName="NBF_ThingBaseFox">
+  <defName>NBF_Fox_WoodRace</defName>
+  <description>A small wooden canine. Most of its nutriton comes from the leaves on its back, but it still requires some external food.</description>
+  <label>wooden fox</label>
+  <statBases>
+    <MoveSpeed>4</MoveSpeed> <!--4.6-->
+    <MarketValue>500</MarketValue> <!--200-->
+    <ComfyTemperatureMin>-35</ComfyTemperatureMin> <!-- -35 -->
+    <ComfyTemperatureMax>40</ComfyTemperatureMax> <!-- 40 -->
+    <MeatAmount>0</MeatAmount>
+    <Wildness>0.75</Wildness>
+  </statBases>
+  <race>
+    <useMeatFrom>Fox_Fennec</useMeatFrom>
+    <body>QuadrupedAnimalWithPawsAndTail</body>
+    <predator>true</predator>
+    <petness>0.1</petness>
+    <baseBodySize>0.55</baseBodySize>
+    <baseHungerRate>0.05</baseHungerRate>
+    <baseHealthScale>0.80</baseHealthScale>
+    <foodType>OmnivoreAnimal</foodType>
+    <leatherDef>WoodLog</leatherDef>
+    <nameOnTameChance>1</nameOnTameChance>
+    <trainability>Advanced</trainability>
+  </race>
+  <comps>
+    <li Class="CompProperties_Shearable">
+      <woolDef>WoodLog</woolDef>
+      <shearIntervalDays>5</shearIntervalDays>
+      <woolAmount>75</woolAmount>
+    </li>
+  </comps>
+</ThingDef>
+
+<PawnKindDef ParentName="AnimalKindBaseFox">
+  <defName>NBF_Fox_Wood</defName>
+  <label>wood fox</label>
+  <race>NBF_Fox_WoodRace</race>
+  <combatPower>40</combatPower>
+  <ecoSystemWeight>0.35</ecoSystemWeight>
+  <lifeStages>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Wood/NBF_Fox_Wood</texPath>
+        <drawSize>1.0</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.0</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Wood/NBF_Fox_Wood</texPath>
+        <drawSize>1.2</drawSize>
+        <shadowData>
+          <volume>(0.25, 0.3, 0.25)</volume>
+          <offset>(0,0,-0.15)</offset>
+        </shadowData>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.2</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+    <li>
+      <bodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Wood/NBF_Fox_Wood</texPath>
+        <drawSize>1.68</drawSize>
+      </bodyGraphicData>
+      <dessicatedBodyGraphicData>
+        <texPath>Things/Pawn/Animal/Fox_Red/Dessicated_Fox_Red</texPath>
+        <drawSize>1.68</drawSize>
+      </dessicatedBodyGraphicData>
+    </li>
+  </lifeStages>
+</PawnKindDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Defs>

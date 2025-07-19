@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Modding\\FoxOverhaul\\Source\\FoxOverhaul\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}|FoxOverhaul.csproj|F:\\Modding\\FoxOverhaul\\Source\\FoxOverhaul\\incidentworker_foxpassing_dragon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38EEA626-F287-48D6-94C0-8BF8E8D2AC67}|FoxOverhaul.csproj|solutionrelative:incidentworker_foxpassing_dragon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IncidentWorker_FoxPassing_Dragon.cs",
+              "DocumentMoniker": "F:\\Modding\\FoxOverhaul\\Source\\FoxOverhaul\\IncidentWorker_FoxPassing_Dragon.cs",
+              "RelativeDocumentMoniker": "IncidentWorker_FoxPassing_Dragon.cs",
+              "ToolTip": "F:\\Modding\\FoxOverhaul\\Source\\FoxOverhaul\\IncidentWorker_FoxPassing_Dragon.cs",
+              "RelativeToolTip": "IncidentWorker_FoxPassing_Dragon.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowCIAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T01:31:53.007Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<LetterLabelDemonFoxPassing>Demon fox passing</LetterLabelDemonFoxPassing>
+	<LetterDemonFoxPassing>A group of demon foxes are passing by. Demon foxes produce Luciferium, so it would be wise to try and tame them before they leave.</LetterDemonFoxPassing>
+	
+	<LetterLabelDarkFoxPassing>Dark fox passing</LetterLabelDarkFoxPassing>
+	<LetterDarkFoxPassing>A group of dark foxes are passing by. Dark foxes produce human skulls that can be used in the construction of skullspikes.</LetterDarkFoxPassing>
+
+	<LetterLabelDragonFoxPassing>Dragon fox passing</LetterLabelDragonFoxPassing>
+	<LetterDragonFoxPassing>A group of dragon foxes are passing by. Dragon foxes are excellent fighters and can even breathe fire.</LetterDragonFoxPassing>
+
+	<LetterLabelFleshFoxPassing>Flesh fox passing</LetterLabelFleshFoxPassing>
+	<LetterFleshFoxPassing>A group of flesh foxes are passing by. Flesh foxes are very weak and fragile, but are capable of producing organs that are useful in surgeries or selling.</LetterFleshFoxPassing>
+
+	<LetterLabelGaiaFoxPassing>Gaia fox passing</LetterLabelGaiaFoxPassing>
+	<LetterGaiaFoxPassing>A group of gaia foxes are passing by. Gaia foxes don't require food and shed grass. Useful in pens with grazing animals.</LetterGaiaFoxPassing>
+
+	<LetterLabelInsectoidFoxPassing>Insectoid fox passing</LetterLabelInsectoidFoxPassing>
+	<LetterInsectoidFoxPassing>A group of insectoid foxes are passing by. Insectoid foxes are relatively harmless insect/mammal hybrids that are capable of producing insect jelly.</LetterInsectoidFoxPassing>
+
+	<LetterLabelMechanoidFoxPassing>Mechanoid fox passing</LetterLabelMechanoidFoxPassing>
+	<LetterMechanoidFoxPassing>A group of mechanoid foxes are passing by. Very durable and combat-ready, these foxes can also produce components.</LetterMechanoidFoxPassing>
+
+	<LetterLabelShellFoxPassing>Shell fox passing</LetterLabelShellFoxPassing>
+	<LetterShellFoxPassing>A group of shell foxes are passing by. Please take extreme caution around these foxes, as their explosions are absolutely devastating. It is recommended to tame them and only use them as a last resort.</LetterShellFoxPassing>
+
+</LanguageData>
