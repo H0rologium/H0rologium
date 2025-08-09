@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="CompPowerPlantLava.cs" />
     <Compile Include="InternalDefOf.cs" />
+    <Compile Include="LavaSettings.cs" />
     <Compile Include="PlaceWorker_LavaGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

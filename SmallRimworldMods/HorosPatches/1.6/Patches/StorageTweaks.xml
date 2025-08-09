@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	 <Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_CB"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>14</maxItemsInCell>	
+	  </value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_CBS"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>10</maxItemsInCell>	
+	  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_FR"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>5</maxItemsInCell>	
+	  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_GR"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>8</maxItemsInCell>	
+	  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_GRS"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>4</maxItemsInCell>	
+	  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_MR"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>8</maxItemsInCell>	
+	  </value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="Vin_MRS"]/building/maxItemsInCell</xpath>
+	  <value>
+		<maxItemsInCell>4</maxItemsInCell>	
+	  </value>
+	</Operation>
+</Patch>

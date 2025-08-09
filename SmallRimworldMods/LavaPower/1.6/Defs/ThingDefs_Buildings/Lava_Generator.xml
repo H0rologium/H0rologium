@@ -22,7 +22,7 @@
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>
 		<statBases>
-		  <MaxHitPoints>600</MaxHitPoints>
+		  <MaxHitPoints>1000</MaxHitPoints>
 		  <WorkToBuild>18000</WorkToBuild>
 		  <Flammability>0.0</Flammability>
 		  <Beauty>-5</Beauty>

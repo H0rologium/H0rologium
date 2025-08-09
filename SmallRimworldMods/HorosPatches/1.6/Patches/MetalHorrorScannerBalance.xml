@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<Operation Class="PatchOperationReplace">
+  <xpath>Defs/ThingDef[defName="Bread_MetalhorrorDetector"]/costList</xpath>
+  <value>
+	<costList>
+	  <Bioferrite>300</Bioferrite>
+	  <Steel>60</Steel>
+	  <Shard>15</Shard>
+	  <ComponentSpacer>2</ComponentSpacer>
+	</costList>
+  </value>
+</Operation>
+
+
+</Patch>

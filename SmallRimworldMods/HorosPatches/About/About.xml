@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+
+	<name>Horologium's Patches</name>
+	<author>Horologium</author>
+	<supportedVersions>
+	  <li>1.6</li>
+	</supportedVersions>
+	<packageId>horo.mypatches</packageId>
+	<description>My personal adjustments to mods to support my burgeoning modlist.</description>
+	<modDependenciesByVersion>
+	  <v1.6>
+		<li>
+		  <packageId>mo.mhscanner</packageId>
+		  <displayName>Metalhorror Scanner</displayName>
+		  <steamWorkshopUrl>steam://url/CommunityFilePage/3223107890</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>Ganja.ED.Embrasures</packageId>
+			<displayName>ED-Embrasures (Continued)</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>vin.warehouse.storage</packageId>
+			<displayName>Warehouse Storage</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3519963835</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>sbz.NeatStorage</packageId>
+			<displayName>[sbz] Neat Storage</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3416243474</steamWorkshopUrl>
+		</li>
+	  </v1.6>
+	</modDependenciesByVersion>
+	<loadAfterByVersion>
+	  <v1.6>
+		<li>mo.mhscanner</li>
+		<li>Ganja.ED.Embrasures</li>
+		<li>vin.warehouse.storage</li>
+		<li>sbz.NeatStorage</li>
+	  </v1.6>
+	</loadAfterByVersion>
+	
+</ModMetaData>

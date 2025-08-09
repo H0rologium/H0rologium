@@ -1,10 +1,5 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 using Verse;
 
 namespace LavaPower
@@ -12,12 +7,17 @@ namespace LavaPower
     [StaticConstructorOnStartup]
     public class CompPowerPlantLava : CompPowerPlant
     {
+        private int stBPG;
+        public CompPowerPlantLava()
+        {
+            stBPG = LoadedModManager.GetMod<LavaPower>().GetSettings<LavaSettings>().basePower;
+        }
 
         protected override float DesiredPowerOutput
         {
             get
             {
-                return base.DesiredPowerOutput;
+                return (stBPG == 4000 || stBPG == base.DesiredPowerOutput) ? base.DesiredPowerOutput : stBPG;
             }
         }
 
