@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ScenarioDef ParentName="ScenarioBase">
+        <defName>ExiledSCN</defName>
+        <label>Exiled Colonists</label>
+        <description>The three of you have been exiled from the land of your ancestors. The king sent soldiers to bring your heads to him, but you barely managed to escape. You now find yourself out in the wild with what you could manage to grab as you fled.</description>
+        <scenario>
+        <playerFaction>
+            <factionDef>PlayerMedievalColony</factionDef>
+        </playerFaction>
+        <summary>Three medieval survivors.</summary>
+        <parts>
+            
+            <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+            <def>ConfigPage_ConfigureStartingPawns</def>
+            <pawnCount>3</pawnCount>
+            <pawnChoiceCount>8</pawnChoiceCount>
+            </li>
+
+            <li Class="ScenPart_PlayerPawnsArriveMethod">
+                <def>PlayerPawnsArriveMethod</def>
+                <method>Standing</method>
+            </li>
+
+            <!-- Player pawns modifiers -->
+            <li Class="ScenPart_ForcedHediff">
+                <def>ForcedHediff</def>
+                <visible>false</visible>
+                <context>PlayerStarter</context>
+                <chance>0.2</chance>
+                <hediff>Malnutrition</hediff>
+                <severityRange>0.2~0.3</severityRange>
+            </li>
+            <li Class="ScenPart_SetNeedLevel">
+                <def>SetNeedLevel</def>
+                <visible>false</visible>
+                <context>PlayerStarter</context>
+                <chance>1.0</chance>
+                <need>Food</need>
+                <levelRange>0.7~0.9</levelRange>
+            </li>
+            
+            <!-- Player starting things -->
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>Silver</thingDef>
+                <count>500</count>
+            </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>Pemmican</thingDef>
+                <count>400</count>
+            </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>MedicineHerbal</thingDef>
+                <count>30</count>
+            </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>Bow_Short</thingDef>
+                </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>MeleeWeapon_LongSword</thingDef>
+                <stuff>Steel</stuff>
+            </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>MeleeWeapon_Knife</thingDef>
+                <stuff>Steel</stuff>
+            </li>
+            <li Class="ScenPart_StartingThing_Defined">
+                <def>StartingThing_Defined</def>
+                <thingDef>Apparel_PlateArmor</thingDef>
+                <stuff>Steel</stuff>
+            </li>
+            <li Class="ScenPart_StartingAnimal">
+                <def>StartingAnimal</def>
+                <count>3</count>
+                <bondToRandomPlayerPawnChance>1.0</bondToRandomPlayerPawnChance>
+            </li>
+
+            <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                <def>ScatterThingsNearPlayerStart</def>
+                <thingDef>Steel</thingDef>
+                <count>200</count>
+            </li>
+            <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                <def>ScatterThingsNearPlayerStart</def>
+                <thingDef>WoodLog</thingDef>
+                <count>600</count>
+            </li>
+            
+            <!-- Game start dialog -->
+            <li Class="ScenPart_GameStartDialog">
+                <def>GameStartDialog</def>
+                <text>You've escaped. Barely dodging the axe of the king's executioners, you have been exiled into the wilds to fend for yourself.\n\nYou must build a new home in the wilderness - like your ancestors did.</text>
+                <closeSound>GameStartSting</closeSound>
+            </li>
+            
+        </parts>
+        </scenario>
+    </ScenarioDef>
+
+</Defs>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>Medieval Starts</name>
+  <author>horologium</author>
+  <packageId>horo.medstartbase</packageId>
+  <description>Starting tech level and scenario base for medieval colonies</description>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+		<li>brrainz.harmony</li>
+		<li>dankpyon.medieval.overhaul</li>
+		<li>oskarpotocki.vfe.classical</li>
+		<li>ferny.progressionagriculture</li>
+        <li>ferny.progressioncore</li>
+	</loadAfter>
+</ModMetaData>

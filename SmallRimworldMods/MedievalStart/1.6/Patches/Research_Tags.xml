@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+    <Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "Stonecutting"]/tags</xpath>
+				<value>
+					<li>MedievalStart</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "Smithing"]</xpath>
+				<value>
+                    <tags>
+					    <li>MedievalStart</li>
+                    </tags>
+				</value>
+			</li>
+            <li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "Pemmican"]/tags</xpath>
+				<value>
+                    <li>MedievalStart</li>
+				</value>
+			</li>
+            <li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "RecurveBow"]/tags</xpath>
+				<value>
+                    <li>MedievalStart</li>
+				</value>
+			</li>
+            <li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "Greatbow"]</xpath>
+				<value>
+                    <tags><li>MedievalStart</li></tags>
+				</value>
+			</li>
+            <li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "PassiveCooler"]/tags</xpath>
+				<value>
+                    <li>MedievalStart</li>
+				</value>
+			</li>
+            <li Class="PatchOperationAdd">
+				<xpath>/Defs/ResearchProjectDef[defName = "LongBlades"]</xpath>
+				<value>
+                    <tags><li>MedievalStart</li></tags>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+
+</Patch>
