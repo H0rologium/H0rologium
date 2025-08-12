@@ -1,3 +1,8 @@
+### Please note this was written in my FRESHMAN year of college and is very poorly coded/optimized.
+
+There was a rewrite attempt but i highly recommend not using this code at all.
+
+
 The purpose of this project is to create a program exploring function of the OpenCV and PyAutoGUI libraries.
 The program is made to automatically play the online game 'Among Us'. The game is owned by Innersloth Studios and
 I have no relations with the company. 
