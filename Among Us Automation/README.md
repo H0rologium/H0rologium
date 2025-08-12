@@ -14,4 +14,4 @@ The main task of this program is to:
 -Upon a match, perform a series of keyboard and mouse actions 
 
 This program does occaisionally use values for a resolution of 1920 x 1200. While implementing dynamic resolutions would not be impossible, this project is only for self-education,
-and as such I currently do not have plans on packaging officially. If you'd like to submit a PR I'm willing to review it, however.
+and as such I currently do not have plans on packaging officially.
