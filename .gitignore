@@ -10,3 +10,5 @@ push.bat
 
 **/bin
 **/obj
+**/.vs
+**/packages
