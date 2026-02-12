@@ -1,23 +1,12 @@
-# Ignores for xml testing project
 
-Some XML Testing/bin/
-Some XML Testing/obj/
+#Ignores for root
+pull.bat
+push.bat
+**/*.bat
 
-#Ignores for 'useful methods'
 
-HorosUsefulMethods/bin/
-HorosUsefulMethods/obj/
-HorosUsefulMethods/HorosUsefulMethods/net5.0/HorosUsefulMethods.deps.json
-HorosUsefulMethods/HorosUsefulMethods/net5.0/HorosUsefulMethods.pdb
-HorosUsefulMethods/HorosUsefulMethods/net5.0/ref/
 
-#ignores for 'remote' bot
+#C# Ignores
 
-RemoteHostManager/bin/
-RemoteHostManager/obj/
-RemoteHostManager/RemoteHostManager/
-
-#ignores for 'filelistr'
-
-FileListr/FileListr/bin/
-FileListr/FileListr/obj/
+**/bin
+**/obj
