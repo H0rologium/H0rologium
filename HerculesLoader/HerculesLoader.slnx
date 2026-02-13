@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="HerculesLoader.csproj" />
+  <Project Path="PluginContext/PluginContext.csproj" Id="88eaf93d-165e-4372-a780-e711f5fa186b" />
 </Solution>
