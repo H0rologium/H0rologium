@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="../PluginContext/PluginContext.csproj" Id="88eaf93d-165e-4372-a780-e711f5fa186b">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
+  <Project Path="../SettingsModule/SettingsModule/SettingsModule.csproj" Id="299acad6-f442-40b3-ae8e-b3a9e8007676" />
+  <Project Path="HerculesLoader.csproj">
+    <Build Solution="Debug|*" Project="false" />
+  </Project>
+</Solution>
