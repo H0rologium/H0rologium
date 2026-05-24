@@ -1,11 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-using System.Reflection;
-using System.Runtime.Loader;
 using PluginContext;
-using System.IO;
-using System.Resources;
 using HerculesLoader.res;
-
 
 namespace HerculesLoader
 {
@@ -20,7 +15,9 @@ namespace HerculesLoader
         private static NotifyIcon tray = null;
         private static Icon trayIcon = null;
         private static ContextMenuStrip ctxMenuStrip = null;
+        private static readonly Logging _logger = new Logging();
 
+        public Logging Logger { get { return _logger; } }
         
 
         [DllImport("kernel32.dll")]
@@ -31,12 +28,13 @@ namespace HerculesLoader
 
         #endregion
 
+
         [STAThread]
         static void Main(string[] args)
         {
             trayIcon = Resource1.Icon;
 
-            if (LoadPlugins())
+            if (LoadPlugins(_logger))
             {
                 ShowWindow(GetConsoleWindow(), SW_HIDE);
                 System.Windows.Forms.Application.Run();
@@ -51,11 +49,11 @@ namespace HerculesLoader
 
         #region WinForms setup methods 
         [STAThread]
-        private static bool LoadPlugins()
+        private static bool LoadPlugins(Logging lgr)
         {
             string pluginDir = $"{AppDomain.CurrentDomain.BaseDirectory}";
             //By the time they are added to this collection, plugins are instanced
-            IReadOnlyList<IPluginContext> plugins = PluginManager.LoadPlugins();
+            IReadOnlyList<IPluginContext> plugins = PluginManager.LoadPlugins(lgr);
 
             //Check if anything valid was loaded
             if (plugins.Count() < 1)

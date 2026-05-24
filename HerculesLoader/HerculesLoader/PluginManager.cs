@@ -12,14 +12,16 @@ namespace HerculesLoader
 
         #endregion
 
-        public static IReadOnlyList<IPluginContext> LoadPlugins()
+        public static IReadOnlyList<IPluginContext> LoadPlugins(Logging lgr)
         {
+            string pluginPath = Path.Combine($"{AppDomain.CurrentDomain.BaseDirectory}", "plugins");
             List<IPluginContext> plugins = new List<IPluginContext>();
-            string pRoot = Path.Combine($"{AppDomain.CurrentDomain.BaseDirectory}", "plugins");
-            if (!Directory.Exists(pRoot))
+
+            if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);
+            if (!Directory.Exists(pluginPath))
                 return plugins;
 
-            foreach (string dir in Directory.GetDirectories(pRoot))
+            foreach (string dir in Directory.GetDirectories(pluginPath))
             {
                 //Check for valid plugin, 'valid' in this case meaning the file has a '_plugin' suffix and there's only one file with this suffix
                 IEnumerable<string> dirSeach = Directory.EnumerateFiles(dir, "*_plugin.dll");
@@ -36,9 +38,12 @@ namespace HerculesLoader
                     var ctx = new PluginLoadContext(dllPath);
                     var assem = ctx.LoadFromAssemblyPath(dllPath);
 
-                    plugins.Add(Reflect(assem.GetExportedTypes()));
+                    Type[] types = assem.GetExportedTypes();
+                    //Assign references to base classes where needed.
+                    IEnumerable<Type> loggingTypes = types.Where(t => t.IsDefined(typeof(PluginContext.HerculesLogger), inherit: false));
+                    
+                    plugins.Add(Reflect(types,lgr));
 
-                    return plugins;
                 }
                 catch (Exception e) { throw new Exception(e.ToString()); }
             }
@@ -47,15 +52,16 @@ namespace HerculesLoader
         }
 
         //Reflection is used to add plugin once loaded
-        private static IPluginContext Reflect(Type[] exportedTypes)
+        private static IPluginContext Reflect(Type[] exportedTypes, Logging lgrRef)
         {
+            Type? loggingClass = exportedTypes.FirstOrDefault(x => (x.IsClass && x.IsDefined(typeof(PluginContext.HerculesLogger),false)));
             foreach (var t in exportedTypes)
             {
                 if (!typeof(IPluginContext).IsAssignableFrom(t) || (t.IsAbstract || t.IsInterface))
                     continue;
 
                 var plugin = (IPluginContext)Activator.CreateInstance(t)!;
-                plugin.Initialize();
+                plugin.Initialize((loggingClass != null) ? lgrRef : null);
                 return plugin;
             }
             return null;
