@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ModMetaData>
-
-	<name>Horologium's Patches</name>
+	<name>Horologium's Tweaks</name>
 	<author>Horologium</author>
+	<url></url>
+	<description>Personal mod to get everything how i'd like it in my modlist(s)</description>
+	<packageId>Horo.Tweaks</packageId>
 	<supportedVersions>
-	  <li>1.6</li>
+		<li>1.6</li>
 	</supportedVersions>
-	<packageId>horo.mypatches</packageId>
-	<description>My personal adjustments to mods to support my burgeoning modlist.</description>
 	<modDependenciesByVersion>
 	  <v1.6>
 		<li>
@@ -17,29 +16,71 @@
 		  <steamWorkshopUrl>steam://url/CommunityFilePage/3223107890</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>Ganja.ED.Embrasures</packageId>
-			<displayName>ED-Embrasures (Continued)</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<packageId>leion247153.CulturedHMeat</packageId>
+			<displayName>Cultured Meat</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/1420944836</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>vin.warehouse.storage</packageId>
-			<displayName>Warehouse Storage</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/3519963835</steamWorkshopUrl>
+			<packageId>torpidhunter.industrialgrinder</packageId>
+			<displayName>Midworld Industrial Grinder</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3534925351</steamWorkshopUrl>
 		</li>
 		<li>
-			<packageId>sbz.NeatStorage</packageId>
-			<displayName>[sbz] Neat Storage</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/3416243474</steamWorkshopUrl>
+			<packageId>Scurvyez.StevesWalls</packageId>
+			<displayName>Steve's Walls</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2616538981</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>mingtuwuxiang.SpaceBaseDecorative</packageId>
+			<displayName>[MUS]太空基地家具Space Base Furniture</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3523916780</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>ponpeco.PFSF</packageId>
+			<displayName>Ponpeco Furnitures : Sci-Fi</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3610234567</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>sarg.alphamechs</packageId>
+			<displayName>Alpha Mechs</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2973169158</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>leion247153.CulturedHMeat</packageId>
+			<displayName>Cultured Meat</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/1420944836</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>Mlie.Industrialisation</packageId>
+			<displayName>Industrialisation (Continued)</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3272401115</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>V.NeutroamineIsBugs</packageId>
+			<displayName>Neutroamine is Bugs</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3715049482</steamWorkshopUrl>
 		</li>
 	  </v1.6>
 	</modDependenciesByVersion>
+    <loadBeforeByVersion>
+        <v1.6 />
+    </loadBeforeByVersion>
 	<loadAfterByVersion>
 	  <v1.6>
 		<li>mo.mhscanner</li>
-		<li>Ganja.ED.Embrasures</li>
-		<li>vin.warehouse.storage</li>
-		<li>sbz.NeatStorage</li>
+		<li>torpidhunter.industrialgrinder</li>
+		<li>leion247153.CulturedHMeat</li>
+		<li>Scurvyez.StevesWalls</li>
+		<li>mingtuwuxiang.SpaceBaseDecorative</li>
+		<li>ponpeco.PFSF</li>
+		<li>sarg.alphamechs</li>
+		<li>Yy.CapesandArmor</li>
+		<li>leion247153.CulturedHMeat</li>
+		<li>Mlie.Industrialisation</li>
+		<li>V.NeutroamineIsBugs</li>
 	  </v1.6>
 	</loadAfterByVersion>
-	
+    <incompatibleWithByVersion>
+        <v1.6 />
+    </incompatibleWithByVersion>
 </ModMetaData>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+          <xpath>Defs/ResearchProjectDef[defName="CulturedMeat"]/prerequisites</xpath>
+          <value>
+            <prerequisites>
+			    <li>MicroelectronicsBasics</li>
+		    </prerequisites>
+          </value>
+      </li>
+
+      <li Class="PatchOperationRemove">
+          <xpath>Defs/ResearchProjectDef[defName="CulturedMeat"]/requiredResearchFacilities</xpath>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

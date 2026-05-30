@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ResearchProjectDef[defName="PFS_ResearchProject"]/baseCost</xpath>
+                <value>
+                    <baseCost>10</baseCost>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ResearchProjectDef[defName="SpaceBase_Explorer_Furniture"]/baseCost</xpath>
+                <value>
+                    <baseCost>10</baseCost>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

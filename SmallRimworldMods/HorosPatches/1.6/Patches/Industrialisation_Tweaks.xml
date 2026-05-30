@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Ind_DeepMine"]/researchPrerequisites</xpath>
+        <value>
+            <researchPrerequisites>
+                <li>DeepDrilling</li>
+                <li>Fabrication</li>
+            </researchPrerequisites>
+        </value>
+    </Operation>
+
+
+</Patch>

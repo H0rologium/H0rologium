@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationReplace">
+          <xpath>Defs/ResearchProjectDef[defName="GlitterGlassResearch"]/baseCost</xpath>
+          <value>
+            <baseCost>500</baseCost>
+          </value>
+      </li>
+
+      <li Class="PatchOperationReplace">
+      <xpath>Defs/ResearchProjectDef[defName="GlitterGlassResearch"]/prerequisites</xpath>
+      <value>
+        <prerequisites>
+            <li>Electricity</li>
+            <li>SterileMaterials</li>
+        </prerequisites>
+      </value>
+      </li>
+
+    </operations>
+  </Operation>
+</Patch>

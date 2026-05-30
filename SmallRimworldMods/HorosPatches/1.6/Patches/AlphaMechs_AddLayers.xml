@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="AM_MechCommanderHelm"]/apparel</xpath>
+                <value>
+                    <layers>
+                        <li>Overhead</li>
+                    </layers>
+                </value>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="AM_MechBreakerHelm"]/apparel</xpath>
+                <value>
+                    <layers>
+                        <li>Overhead</li>
+                    </layers>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

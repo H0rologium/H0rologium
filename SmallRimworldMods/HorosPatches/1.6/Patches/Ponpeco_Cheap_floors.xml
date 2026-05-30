@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_WhitePanel"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_GrayPanel"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_BlackPanel"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_WhitePanelB"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_GrayPanelB"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_BlackPanelB"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_CompositePanel"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_CompositePanel_Gray"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_CompositePanel_Black"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_RustGrate"]</xpath>
+          <value>
+                <costList>
+                    <Steel>4</Steel>
+                </costList>
+          </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LuminousFlooring"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LF_CoolGray"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LF_Black"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LF_DustyAmethyst"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LF_Mint"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_LF_Cyan"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_HexaTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_HexaTileB"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_TRONTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_WhiteTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_GrayTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_BlackTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_ClearBlueTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+      <li Class="PatchOperationAdd">
+          <xpath>Defs/TerrainDef[defName="PFS_ClearGrayTile"]</xpath>
+          <value>
+                <costList>
+                    <Steel>5</Steel>
+                </costList>
+          </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>

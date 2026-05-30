@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+        <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="StoneRoadBuilt"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>0.75</biomeModifier>
+                            <hillinessModifier>0.4</hillinessModifier>
+                            <winterModifier>0</winterModifier>
+                            <techlevelToBuild>Medieval</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRStoneRoad</techNeededToBuild>
+                            <costs>
+                                <Work>405</Work>
+                                <WoodLog>24</WoodLog>
+                                <Stone>180</Stone>
+                                <Steel>30</Steel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="AsphaltRoad"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>true</canBuildOnImpassable>
+                            <canBuildOnWater>false</canBuildOnWater>
+                            <minConstruction>6</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Industrial</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRAsphaltRoad</techNeededToBuild>
+                            <costs>
+                                <Work>410</Work>
+                                <Stone>360</Stone>
+                                <Steel>60</Steel>
+                                <Chemfuel>30</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="GlitterRoad"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>1</hillinessModifier>
+                            <winterModifier>1</winterModifier>
+                            <canBuildOnImpassable>true</canBuildOnImpassable>
+                            <canBuildOnWater>true</canBuildOnWater>
+                            <minConstruction>8</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Spacer</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRGlitterRoad</techNeededToBuild>
+                            <costs>
+                                <Work>415</Work>
+                                <Stone>35</Stone>
+                                <Steel>90</Steel>
+                                <Chemfuel>30</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="Railroad"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>true</canBuildOnWater>
+                            <minConstruction>6</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Industrial</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRRailroad</techNeededToBuild>
+                            <costs>
+                                <Work>200</Work>
+                                <WoodLog>60</WoodLog>
+                                <Stone>80</Stone>
+                                <Steel>60</Steel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="RailroadOverpass"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>false</canBuildOnWater>
+                            <minConstruction>6</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Industrial</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRRailroad</techNeededToBuild>
+                            <costs>
+                                <Work>205</Work>
+                                <WoodLog>90</WoodLog>
+                                <Stone>10</Stone>
+                                <Steel>80</Steel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="RailYard"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>true</canBuildOnWater>
+                            <minConstruction>6</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Industrial</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRRailroad</techNeededToBuild>
+                            <costs>
+                                <Work>210</Work>
+                                <WoodLog>180</WoodLog>
+                                <Stone>240</Stone>
+                                <Steel>180</Steel>
+                                <Chemfuel>120</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="Glitterrail"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>true</canBuildOnWater>
+                            <minConstruction>8</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Spacer</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRGlitterrail</techNeededToBuild>
+                            <costs>
+                                <Work>240</Work>
+                                <Stone>100</Stone>
+                                <Steel>55</Steel>
+                                <Chemfuel>30</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="GlitterOverpass"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>false</canBuildOnWater>
+                            <minConstruction>8</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Spacer</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRGlitterrail</techNeededToBuild>
+                            <costs>
+                                <Work>360</Work>
+                                <Stone>120</Stone>
+                                <Steel>85</Steel>
+                                <Chemfuel>20</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="GlitterYard"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>0.6</hillinessModifier>
+                            <winterModifier>0.2</winterModifier>
+                            <canBuildOnImpassable>false</canBuildOnImpassable>
+                            <canBuildOnWater>false</canBuildOnWater>
+                            <minConstruction>8</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Spacer</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRGlitterrail</techNeededToBuild>
+                            <costs>
+                                <Work>370</Work>
+                                <Stone>350</Stone>
+                                <Steel>200</Steel>
+                                <Chemfuel>30</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/RoadDef[defName="RailTunnel"]/modExtensions</xpath>
+                <value>
+                    <modExtensions>
+                        <li Class="RailsAndRoadsOfTheRim.DefModExtension_RotR_RoadDef">
+                            <built>true</built>
+                            <biomeModifier>1</biomeModifier>
+                            <hillinessModifier>1</hillinessModifier>
+                            <winterModifier>1</winterModifier>
+                            <canBuildOnImpassable>true</canBuildOnImpassable>
+                            <canBuildOnWater>false</canBuildOnWater>
+                            <minConstruction>8</minConstruction>
+                            <percentageOfminConstruction>0.25</percentageOfminConstruction>
+                            <techlevelToBuild>Industrial</techlevelToBuild>
+                            <techNeededToBuild>ResearchProject_RotRRailTunnel</techNeededToBuild>
+                            <costs>
+                                <Work>180</Work>
+                                <WoodLog>90</WoodLog>
+                                <Stone>80</Stone>
+                                <Steel>65</Steel>
+                                <Chemfuel>45</Chemfuel>
+                            </costs>
+                        </li>
+                    </modExtensions>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ResearchProjectDef[defName="ResearchProject_RotRAsphaltRoad"]/baseCost</xpath>
+                <value>
+                    <baseCost>1000</baseCost>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ResearchProjectDef[defName="ResearchProject_RotRGlitterRoad"]/baseCost</xpath>
+                <value>
+                    <baseCost>4000</baseCost>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ResearchProjectDef[defName="ResearchProject_RotRGlitterrail"]/baseCost</xpath>
+                <value>
+                    <baseCost>4000</baseCost>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="RotR_AISR2GNew"]/statBases/Mass</xpath>
+                <value>
+                    <Mass>10</Mass>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[defName="RotR_ISR2GNew"]/statBases/Mass</xpath>
+                <value>
+                    <Mass>10</Mass>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
