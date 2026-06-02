@@ -30,7 +30,7 @@ Live and die by [XKCD #927](https://xkcd.com/927/)
 <hr>
 <div align="center">
   
-  <img src="https://www.codewars.com/users/skeyanwashere/badges/large">
+  [<img src="https://www.codewars.com/users/skeyanwashere/badges/large">](https://codewars.com)
 </div>
 
 
