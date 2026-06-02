@@ -2,7 +2,7 @@ Hello
 
 I manage hobby projects and published projects here. 
 
-If you are here because of one of my Rimworld mods, please know that it is better to either comment under the workshop page or start a new discussion for that item.
+If you are here because of one of my Steam Workshop mods, please know that I prefer you to **either** comment under the workshop page or open an issue on Github.
 
 Live and die by [XKCD #927](https://xkcd.com/927/)
 
