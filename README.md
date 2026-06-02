@@ -1,8 +1,7 @@
-Hi
+Hello
 
-I write code. 
-Repos last updated/archived before 2023 are from undergrad.
+I manage hobby projects and published projects here. 
 
-Sometimes repositories are removed due to obsolescence.
+If you are here because of one of my Rimworld mods, please know that it is better to either comment under the workshop page or start a new discussion for that item.
 
 ![CodeWars Profile](https://www.codewars.com/users/skeyanwashere/badges/large)
