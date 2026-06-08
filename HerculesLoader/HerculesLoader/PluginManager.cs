@@ -8,7 +8,7 @@ namespace HerculesLoader
 
         #region fields
 
-        private const string MULTIPLUGINERROR = "Multiple files were found in the same plugin folder using the same prefix. Have we accidentally merged plugins?";
+        private const string MULTIPLUGINERROR = "Multiple files were found in the same plugin folder using the same suffix. Have we accidentally merged plugins?";
 
         #endregion
 
@@ -28,7 +28,7 @@ namespace HerculesLoader
                 if (!dirSeach.Any())
                 { continue; }
                 if (dirSeach.Count() > 1)
-                { throw new FileFormatException(MULTIPLUGINERROR +$" SOURCE: {dir}"); }
+                {  throw new FileFormatException(MULTIPLUGINERROR +$" SOURCE: {dir}"); }
 
 
                 try
