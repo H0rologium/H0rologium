@@ -10,7 +10,7 @@ namespace SettingsModule
         public string Name { get { return name; } }
         public Size WindowSize { get { return windowSize; } }
 
-        public void Initialize(object? loggingClassRef)
+        public void Initialize(object? loggingClassRef, string baseDLLPath)
         {
             logger = new SettingsModuleLogger(loggingClassRef);
             logger.LogMessage(0,"Settings has finished initializing");

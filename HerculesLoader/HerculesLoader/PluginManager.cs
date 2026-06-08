@@ -42,7 +42,7 @@ namespace HerculesLoader
                     //Assign references to base classes where needed.
                     IEnumerable<Type> loggingTypes = types.Where(t => t.IsDefined(typeof(PluginContext.HerculesLogger), inherit: false));
                     
-                    plugins.Add(Reflect(types,lgr));
+                    plugins.Add(Reflect(types,lgr,dllPath));
 
                 }
                 catch (Exception e) { throw new Exception(e.ToString()); }
@@ -52,7 +52,7 @@ namespace HerculesLoader
         }
 
         //Reflection is used to add plugin once loaded
-        private static IPluginContext Reflect(Type[] exportedTypes, Logging lgrRef)
+        private static IPluginContext Reflect(Type[] exportedTypes, Logging lgrRef,string dllPath)
         {
             Type? loggingClass = exportedTypes.FirstOrDefault(x => (x.IsClass && x.IsDefined(typeof(PluginContext.HerculesLogger),false)));
             foreach (var t in exportedTypes)
@@ -61,7 +61,7 @@ namespace HerculesLoader
                     continue;
 
                 var plugin = (IPluginContext)Activator.CreateInstance(t)!;
-                plugin.Initialize((loggingClass != null) ? lgrRef : null);
+                plugin.Initialize((loggingClass != null) ? lgrRef : null,dllPath);
                 return plugin;
             }
             return null;

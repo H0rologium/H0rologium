@@ -38,9 +38,17 @@ namespace BackupTool
         public void InitializeComponent()
         {
             titleLbl = new Label();
+            SuspendLayout();
+
+            titleLbl.Font = new Font(DEFAULT_FONT, 16F);
+            titleLbl.Location = new Point(0, 0);
+            titleLbl.Name = "titleLbl";
+            titleLbl.Size = new Size(300, 24);
             titleLbl.Text = "Backup and Restore Files";
-            titleLbl.Font = new Font(DEFAULT_FONT, 16);
-            this.Controls.Add(titleLbl);
+
+            Controls.Add(titleLbl);
+            Name = "BackupToolWindow";
+            ResumeLayout(false);
         }
     }
 }

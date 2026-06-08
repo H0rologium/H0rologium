@@ -10,7 +10,8 @@
         /// Method to set up anything that the plugin might need. If tagging classes to enable logging or setting support, ensure that the parameters passed are assigned somewhere in your plugin.
         /// </summary>
         /// <param name="initialLoggingClassReference">Method to let you store to later reference Hercules Loader's logging methods. This can be passed as NULL if no public classes in the plugin are marked with the 'HerculesLogger' attribute.</param>
-        void Initialize(object? initialLoggingClassReference);
+        /// <param name="baseDLLPath">The path pointing to where the _plugin dll was found. Can be discarded or used by the plugin as necessary</param>
+        void Initialize(object? initialLoggingClassReference,string baseDLLPath);
 
         void OnModuleOpen(object? sender, EventArgs e);
     }
