@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/TerrainDef[defName="ConcreteBridge"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Structure</designationCategory>
+	    </value>
+	</Operation>
+</Patch>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="AB_ExoticDoor"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_Doors</designationCategory>
+	    </value>
+	</Operation>
+    <Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="AB_ExoticAutoDoor"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_Doors</designationCategory>
+	    </value>
+	</Operation>
+</Patch>

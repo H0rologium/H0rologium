@@ -10,7 +10,11 @@
 	</supportedVersions>
 	<modDependenciesByVersion>
 	  <v1.6>
-	  	<!--Not necessary but ReGrowth2?-->
+		<li>
+		  <packageId>ReGrowth.BOTR.Core</packageId>
+		  <displayName>ReGrowth 2</displayName>
+		  <steamWorkshopUrl>steam://url/CommunityFilePage/2260097569</steamWorkshopUrl>
+		</li>
 		<li>
 		  <packageId>mo.mhscanner</packageId>
 		  <displayName>Metalhorror Scanner</displayName>
@@ -80,6 +84,15 @@
 		<li>Mlie.Industrialisation</li>
 		<li>V.NeutroamineIsBugs</li>
 		<li>ReGrowth.BOTR.Core</li>
+		<li>Hali.NPSBiomes</li>
+		<li>zylle.NightLights</li>
+		<li>niz.xenomorphtype</li>
+		<li>smallmine.HeavyShuttle</li>
+		<li>zal.orassans</li>
+		<li>Ludeon.Odyssey</li>
+		<li>sarg.alphabiomes</li>
+		<li>Mlie.RailsAndRoadsOfTheRim</li>
+		<li>Albion.SparklingWorlds.Full</li>
 	  </v1.6>
 	</loadAfterByVersion>
     <incompatibleWithByVersion>
