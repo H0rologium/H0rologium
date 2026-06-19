@@ -30,9 +30,3 @@ Some of my older repositories have been removed due to becoming completely obsol
 ```
 
 <hr>
-<div align="center">
-  
-  [<img src="https://www.codewars.com/users/skeyanwashere/badges/large">](https://codewars.com)
-</div>
-
-

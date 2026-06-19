@@ -10,6 +10,7 @@
 	</supportedVersions>
 	<modDependenciesByVersion>
 	  <v1.6>
+	  	<!--Not necessary but ReGrowth2?-->
 		<li>
 		  <packageId>mo.mhscanner</packageId>
 		  <displayName>Metalhorror Scanner</displayName>
@@ -78,6 +79,7 @@
 		<li>leion247153.CulturedHMeat</li>
 		<li>Mlie.Industrialisation</li>
 		<li>V.NeutroamineIsBugs</li>
+		<li>ReGrowth.BOTR.Core</li>
 	  </v1.6>
 	</loadAfterByVersion>
     <incompatibleWithByVersion>
