@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <li>1.6</li>
+
+    <!--Better Architect Menu Patches-->
+    <li IfModActive="ferny.BetterArchitect,zylle.NightLights">BetterArchitectMenuPatches/Night Lights</li>
+    <li IfModActive="ferny.BetterArchitect,Hali.NPSBiomes">BetterArchitectMenuPatches/NPSBiomes</li>
+    <li IfModActive="ferny.BetterArchitect,niz.xenomorphtype">BetterArchitectMenuPatches/Alien Rimworld</li>
+    <li IfModActive="ferny.BetterArchitect,smallmine.HeavyShuttle">BetterArchitectMenuPatches/Orca Shuttle</li>
+    <li IfModActive="ferny.BetterArchitect,zal.orassans">BetterArchitectMenuPatches/Orassans</li>
+    <li IfModActive="ferny.BetterArchitect,Ludeon.Rimworld.Odyssey">BetterArchitectMenuPatches/Odyssey</li>
+    <li IfModActive="ferny.BetterArchitech,Mlie.RailsAndRoadsOfTheRim">BetterArchitectMenuPatches/Rails And Roads Of the Rim</li>
+    <li IfModActive="ferny.BetterArchitect,sarg.alphabiomes">BetterArchitectMenuPatches/Alpha Biomes</li>
+    <li IfModActive="ferny.BetterArchitect,Albion.SparklingWorlds.Full">BetterArchitectMenuPatches/Sparkling Worlds</li>
+  </v1.6>
+</loadFolders>

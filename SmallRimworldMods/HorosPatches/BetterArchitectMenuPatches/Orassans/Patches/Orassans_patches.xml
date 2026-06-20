@@ -6,8 +6,8 @@
             <designationCategory>Ferny_CombatInfrastructure</designationCategory>
 	    </value>
 	</Operation>
-    <Operation Class="PatchOperationReplace">
-	  <xpath>Defs/ThingDef[defName="OrassanPowerTransfer"]/designationCategory</xpath>
+    <Operation Class="PatchOperationAdd">
+	  <xpath>Defs/ThingDef[defName="OrassanPowerTransfer"]</xpath>
 	    <value>
             <designationCategory>Ferny_PowerGeneration</designationCategory>
 	    </value>
