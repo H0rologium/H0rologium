@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TerrainDef[@Name="FF_Flower_Base"]</xpath>
+		<value>
+			<designationCategory>Ferny_DecoPlants</designationCategory>
+		</value>
+	</Operation>
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="FF_Fountain"]</xpath>
+		<value>
+			<designationCategory>Ferny_DecoPlants</designationCategory>
+		</value>
+	</Operation>
+</Patch>
