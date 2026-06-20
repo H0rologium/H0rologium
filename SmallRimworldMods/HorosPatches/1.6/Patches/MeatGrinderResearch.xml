@@ -7,6 +7,12 @@
 	  <li>CulturedMeat</li>
   </value>
 </Operation>
+<Operation Class="PatchOperationAdd">
+  <xpath>Defs/ThingDef[defName="IndustrialMeatGrinderThin"]/researchPrerequisites</xpath>
+  <value>
+	  <li>CulturedMeat</li>
+  </value>
+</Operation>
 
 
 </Patch>

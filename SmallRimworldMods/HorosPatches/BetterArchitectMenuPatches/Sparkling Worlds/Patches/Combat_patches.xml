@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="BeamCannonSatellitePodSW"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_SpaceCombat</designationCategory>
+	    </value>
+	</Operation>
+    <Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="KineticBombardmentSatellitePodSW"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_SpaceCombat</designationCategory>
+	    </value>
+	</Operation>
+</Patch>

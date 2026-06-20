@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchProjectDef[defName="HDH_BasicDensity"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>Hydroponics</li>
+        <li>tvg_GenIIHydroponics</li>
+      </prerequisites>	
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchProjectDef[defName="HDH_HighDensity"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>HDH_BasicDensity</li>
+        <li>MicroelectronicsBasics</li>
+      </prerequisites>	
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchProjectDef[defName="HDH_HighDensity_Ultra"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>HDH_HighDensity</li>
+        <li>Fabrication</li>
+        <li>CulturedMeat</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchProjectDef[defName="HDH_HighDensity_Quantum"]/prerequisites</xpath>
+    <value>
+      <prerequisites>
+        <li>HDH_HighDensity_Ultra</li>
+        <li>AdvancedFabrication</li>
+      </prerequisites>
+    </value>
+  </Operation>
+
+
+</Patch>

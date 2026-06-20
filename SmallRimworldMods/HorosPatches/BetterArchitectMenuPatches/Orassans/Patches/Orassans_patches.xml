@@ -24,4 +24,17 @@
             <designationCategory>Ferny_Production</designationCategory>
 	    </value>
 	</Operation>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="BetharianBorer"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_Production</designationCategory>
+	    </value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+	  <xpath>Defs/ThingDef[defName="BetharianGenerator"]/designationCategory</xpath>
+	    <value>
+            <designationCategory>Ferny_Production</designationCategory>
+	    </value>
+	</Operation>
+	
 </Patch>

@@ -18,4 +18,10 @@
             <designationCategory>Ferny_ResearchProduction</designationCategory>
 	    </value>
 	</Operation>
+	<Operation Class="PatchOperationAdd">
+	  <xpath>Defs/ThingDef[defName="GlitterworldHospitalBedSW"]</xpath>
+	    <value>
+            <designationCategory>Ferny_Medical</designationCategory>
+	    </value>
+	</Operation>
 </Patch>

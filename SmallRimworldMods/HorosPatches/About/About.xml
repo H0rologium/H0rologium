@@ -10,6 +10,16 @@
 	</supportedVersions>
 	<modDependenciesByVersion>
 	  <v1.6>
+	  	<li>
+			<packageId>MapleApple.HighDensityHydroponics.Fixed.ZouHb.zades</packageId>
+			<displayName>High Density Hydroponics</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3534458015</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>TheVillageGuy.Gen2Hydro.1</packageId>
+			<displayName>2nd Generation Hydroponics</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2221849150</steamWorkshopUrl>
+		</li>
 		<li>
 		  <packageId>ReGrowth.BOTR.Core</packageId>
 		  <displayName>ReGrowth 2</displayName>
@@ -93,6 +103,12 @@
 		<li>sarg.alphabiomes</li>
 		<li>Mlie.RailsAndRoadsOfTheRim</li>
 		<li>Albion.SparklingWorlds.Full</li>
+		<li>lts.I</li>
+		<li>MapleApple.HighDensityHydroponics.Fixed.ZouHb.zades</li>
+		<li>TheVillageGuy.Gen2Hydro.1</li>
+		<li>FF.Goat.FakeFlowers</li>
+		<li>ferny.BetterArchitect</li>
+		<li>Van.DATools</li>
 	  </v1.6>
 	</loadAfterByVersion>
     <incompatibleWithByVersion>

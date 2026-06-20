@@ -14,5 +14,8 @@
     <li IfModActive="ferny.BetterArchitech,Mlie.RailsAndRoadsOfTheRim">BetterArchitectMenuPatches/Rails And Roads Of the Rim</li>
     <li IfModActive="ferny.BetterArchitect,sarg.alphabiomes">BetterArchitectMenuPatches/Alpha Biomes</li>
     <li IfModActive="ferny.BetterArchitect,Albion.SparklingWorlds.Full">BetterArchitectMenuPatches/Sparkling Worlds</li>
+    <li IfModActive="ferny.BetterArchitect,lts.I">BetterArchitectMenuPatches/Integrated Implants</li>
+    <li IfModActive="ferny.BetterArchitect,FF.Goat.FakeFlowers">BetterArchitectMenuPatches/Fake Flowers</li>
+    <li IfModActive="ferny.BetterArchitect,Van.DATools">BetterArchitectMenuPatches/Dark Ages - Medieival Tools</li>
   </v1.6>
 </loadFolders>
