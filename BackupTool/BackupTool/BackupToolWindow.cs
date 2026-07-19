@@ -31,6 +31,7 @@ namespace BackupTool
         #region Forms Fields
 
         private const string DEFAULT_FONT = "SimSun-ExtG";
+        private Panel backupLocationsPanel;
         private Label titleLbl;
 
         #endregion
@@ -38,17 +39,36 @@ namespace BackupTool
         public void InitializeComponent()
         {
             titleLbl = new Label();
+            backupLocationsPanel = new Panel();
             SuspendLayout();
-
-            titleLbl.Font = new Font(DEFAULT_FONT, 16F);
+            // 
+            // titleLbl
+            // 
             titleLbl.Location = new Point(0, 0);
             titleLbl.Name = "titleLbl";
             titleLbl.Size = new Size(300, 24);
+            titleLbl.TabIndex = 0;
             titleLbl.Text = "Backup and Restore Files";
-
+            // 
+            // backupLocationsPanel
+            // 
+            backupLocationsPanel.Location = new Point(26, 26);
+            backupLocationsPanel.Name = "backupLocationsPanel";
+            backupLocationsPanel.Size = new Size(200, 100);
+            backupLocationsPanel.TabIndex = 1;
+            // 
+            // BackupToolWindow
+            // 
+            ClientSize = new Size(284, 261);
+            Controls.Add(backupLocationsPanel);
             Controls.Add(titleLbl);
             Name = "BackupToolWindow";
             ResumeLayout(false);
+        }
+
+        public void AddNewBackupLocation()
+        {
+
         }
     }
 }
