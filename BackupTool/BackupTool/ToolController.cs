@@ -23,7 +23,7 @@
             _logger.LogMessage(BackupToolLogger.LogLevel.INFO, $"Will try to populate the view with {locations.Count} locations");
             foreach (Dictionary<string,string> loc in locations)
             {
-                View.AddNewBackupLocation();
+                View.AddNewBackupLocation(loc);
             }
         }
     }
