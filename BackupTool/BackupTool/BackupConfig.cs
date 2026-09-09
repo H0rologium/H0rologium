@@ -26,17 +26,20 @@ namespace BackupTool
         public BackupConfig(XmlDocument raw, BackupToolLogger logg)
         {
             _logger = logg;
-            XmlNodeList? locations = raw.SelectNodes(XPATH_BACKUPLOCATIONS);
+            //Select the root node holding the location children nodes
+            XmlNode? locations = raw.SelectSingleNode(XPATH_BACKUPLOCATIONS);
+            BackupLocations = new List<Dictionary<string, string>>();
             if (locations != null)
             {
-                for (int i = 0; i < locations.Count; i++)
+                //For each location, add them as their own entries into a dictionary we use to populate instances of a UserControl
+                for (int i = 0; i < locations.ChildNodes.Count; i++)
                 {
                     Dictionary<string, string> entry = new Dictionary<string, string>();
-                    entry.Add(KEY_BACKUPSOURCE, locations[i].SelectSingleNode(KEY_BACKUPSOURCE).Value);
-                    entry.Add(KEY_BACKUPDESTINATION, locations[i].SelectSingleNode(KEY_BACKUPDESTINATION).Value);
-                    entry.Add(KEY_INCLUDESUBFOLDERCONTENTS, locations[i].SelectSingleNode(KEY_INCLUDESUBFOLDERCONTENTS).Value);
-                    entry.Add(KEY_EXTENSIONWHITELIST, locations[i].SelectSingleNode(KEY_EXTENSIONWHITELIST).Value);
-                    entry.Add(KEY_EXTENSIONBLACKLIST, locations[i].SelectSingleNode(KEY_EXTENSIONBLACKLIST).Value);
+                    entry.Add(KEY_BACKUPSOURCE, locations.ChildNodes[i].SelectSingleNode(KEY_BACKUPSOURCE).InnerText);
+                    entry.Add(KEY_BACKUPDESTINATION, locations.ChildNodes[i].SelectSingleNode(KEY_BACKUPDESTINATION).InnerText);
+                    entry.Add(KEY_INCLUDESUBFOLDERCONTENTS, locations.ChildNodes[i].SelectSingleNode(KEY_INCLUDESUBFOLDERCONTENTS).InnerText);
+                    entry.Add(KEY_EXTENSIONWHITELIST, locations.ChildNodes[i].SelectSingleNode(KEY_EXTENSIONWHITELIST).InnerText);
+                    entry.Add(KEY_EXTENSIONBLACKLIST, locations.ChildNodes[i].SelectSingleNode(KEY_EXTENSIONBLACKLIST).InnerText);
 
                     BackupLocations.Append(entry);
                 }
@@ -44,7 +47,6 @@ namespace BackupTool
             else
             {
                 _logger.LogMessage(BackupToolLogger.LogLevel.WARNING, "Config was loaded without any backup locations set");
-                BackupLocations = new List<Dictionary<string, string>>();
             }
         }
     }

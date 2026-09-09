@@ -17,7 +17,7 @@ namespace BackupTool
             XmlElement rtCfg = (XmlElement)doc.AppendChild(doc.CreateElement("BackupConfig"));
             rtCfg.AppendChild(doc.CreateElement("BackupLocations"));
             XmlElement delOnBackup = (XmlElement)rtCfg.AppendChild(doc.CreateElement("DeleteBeforeBackup"));
-            delOnBackup.Value = false.ToString().ToLower();
+            delOnBackup.InnerText = false.ToString().ToLower();
 
             return doc;
         }

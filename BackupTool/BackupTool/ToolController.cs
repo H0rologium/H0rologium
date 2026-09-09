@@ -20,6 +20,7 @@
 
         public void UpdateBackupList(List<Dictionary<string,string>> locations)
         {
+            if (locations == null) _logger.LogMessage(BackupToolLogger.LogLevel.ERROR, $"Passed locations for backup list is null! Has controller lost relations with the model?");
             _logger.LogMessage(BackupToolLogger.LogLevel.INFO, $"Will try to populate the view with {locations.Count} locations");
             foreach (Dictionary<string,string> loc in locations)
             {
