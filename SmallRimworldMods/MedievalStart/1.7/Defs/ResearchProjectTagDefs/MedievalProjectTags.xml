@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectTagDef>
+    <defName>MedievalStart</defName>
+  </ResearchProjectTagDef>
+
+  <ResearchProjectTagDef>
+    <defName>MedievalStartTechprints</defName>
+  </ResearchProjectTagDef>
+
+</Defs>
